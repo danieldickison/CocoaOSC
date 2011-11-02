@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OSCConnectionDelegate.h"
 
+@class OSCConnection;
 
-@class AsyncUdpSocket;
-
-@interface AppDelegate : NSObject <UITextFieldDelegate>
+@interface AppDelegate : NSObject <UITextFieldDelegate, OSCConnectionDelegate>
 {
     UIWindow *window;
     
-    AsyncUdpSocket *socket;
+    OSCConnection *connection;
     int sendType;
 }
 

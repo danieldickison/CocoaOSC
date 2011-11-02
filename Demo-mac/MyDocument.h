@@ -8,7 +8,7 @@
 
 
 #import <Cocoa/Cocoa.h>
-#import <CocoaOSC/OSCConnectionDelegate.h>
+#import "CocoaOSC.h"
 
 @class OSCConnection;
 @class MyDocumentModel;

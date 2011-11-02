@@ -207,7 +207,7 @@ onError:
     }
     else if (protocol == OSCConnectionTCP_Int32Header)
     {
-        uint32_t length = CFSwapInt32HostToBig([packetData length]);
+        uint32_t length = CFSwapInt32HostToBig((uint32_t)[packetData length]);
         NSData *lengthData = [NSData dataWithBytes:&length length:4];
         [tcpSocket writeData:lengthData withTimeout:-1 tag:kPacketHeaderTag];
         [tcpSocket writeData:packetData withTimeout:-1 tag:lastSendTag];

@@ -7,7 +7,7 @@
 //
 
 #import "MyMethod.h"
-#import <CocoaOSC/CocoaOSC.h>
+#import "CocoaOSC.h"
 
 @implementation MyMethod
 

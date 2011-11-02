@@ -46,7 +46,7 @@
     [encoder encodeInt:localPort forKey:@"localPort"];
     [encoder encodeObject:remoteHost forKey:@"remoteHost"];
     [encoder encodeInt:remotePort forKey:@"remotePort"];
-    [encoder encodeInt:protocol forKey:@"protocol"];
+    [encoder encodeInt:(int)protocol forKey:@"protocol"];
 }
 
 @end

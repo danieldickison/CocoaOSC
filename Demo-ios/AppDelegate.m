@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AsyncUdpSocket.h"
-#import "OSCPacket.h"
+#import "CocoaOSC.h"
 
 
 enum {
@@ -30,7 +30,13 @@ enum {
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
-    socket = [[AsyncUdpSocket alloc] initWithDelegate:self];
+    connection = [[OSCConnection alloc] init];
+    connection.delegate = self;
+    NSError *error;
+    if (![connection bindToAddress:nil port:0 error:&error])
+    {
+        NSLog(@"Could not bind UDP connection: %@", error);
+    }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     ((UITextField *)[window viewWithTag:kTagRemoteHost]).text = [defaults stringForKey:@"remoteHost"];
@@ -92,25 +98,21 @@ enum {
         case 7: [message addImpulse]; break;
         case 8: [message addNull]; break;
     }
-    [socket sendData:[message encode] toHost:remoteHost port:[remotePort intValue] withTimeout:-1 tag:0];
-    [socket receiveWithTimeout:-1 tag:0];
+    [connection sendPacket:message toHost:remoteHost port:[remotePort intValue]];
+    [connection receivePacket];
     [message release];
 }
 
 
-- (void)onUdpSocket:(AsyncUdpSocket *)sock didSendDataWithTag:(long)tag;
+- (void)oscConnection:(OSCConnection *)con didSendPacket:(OSCPacket *)packet;
 {
-    ((UITextField *)[window viewWithTag:kTagLocalPort]).text = [NSString stringWithFormat:@"%hu", [sock localPort]];
+    ((UITextField *)[window viewWithTag:kTagLocalPort]).text = [NSString stringWithFormat:@"%hu", con.localPort];
 }
 
-
-- (BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port;
+- (void)oscConnection:(OSCConnection *)con didReceivePacket:(OSCPacket *)packet fromHost:(NSString *)host port:(UInt16)port
 {
-    OSCPacket *packet = [[OSCPacket alloc] initWithData:data];
     ((UITextField *)[window viewWithTag:kTagReceivedValue]).text = [packet.arguments description];
     ((UITextField *)[window viewWithTag:kTagLocalAddress]).text = packet.address;
-    [packet release];
-    return YES;
 }
 
 @end

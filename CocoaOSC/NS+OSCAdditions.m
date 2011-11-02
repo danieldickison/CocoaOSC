@@ -61,7 +61,7 @@
     [data setLength:[data length]+1];
     
     // Pad to multiple of 4 bytes if necessary.
-    int rem = [data length] % 4;
+    int rem = (int)([data length] % 4);
     if (rem != 0)
     {
         [data appendBytes:"\0\0\0" length:4-rem];

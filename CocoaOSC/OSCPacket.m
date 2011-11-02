@@ -170,7 +170,7 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
     }
     else if ([obj isKindOfClass:[NSData class]])
     {
-        uint32_t contentLength = [obj length];
+        uint32_t contentLength = (uint32_t)[obj length];
         NSUInteger length = 4 + contentLength;
         while (length % 4 > 0) length++;
         NSMutableData *data = [NSMutableData dataWithCapacity:length];
@@ -481,7 +481,7 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
     for (OSCPacket *child in childPackets)
     {
         NSData *childData = [child encode];
-        uint32_t swappedChildLength = CFSwapInt32HostToBig([childData length]);
+        uint32_t swappedChildLength = CFSwapInt32HostToBig((uint32_t)[childData length]);
         [data appendBytes:&swappedChildLength length:4];
         [data appendData:childData];
     }

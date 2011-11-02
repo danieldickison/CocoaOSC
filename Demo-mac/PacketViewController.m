@@ -23,7 +23,7 @@
 
 - (IBAction)addTextualArgument:(id)sender
 {
-    int code = [NSApp runModalForWindow:self.textInputSheet];
+    NSInteger code = [NSApp runModalForWindow:self.textInputSheet];
     [self.textInputSheet orderOut:nil];
     if (code == 1)
     {
