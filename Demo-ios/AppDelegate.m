@@ -32,11 +32,13 @@ enum {
 {
     connection = [[OSCConnection alloc] init];
     connection.delegate = self;
+    connection.continuouslyReceivePackets = YES;
     NSError *error;
     if (![connection bindToAddress:nil port:0 error:&error])
     {
         NSLog(@"Could not bind UDP connection: %@", error);
     }
+    [connection receivePacket];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     ((UITextField *)[window viewWithTag:kTagRemoteHost]).text = [defaults stringForKey:@"remoteHost"];
@@ -99,7 +101,6 @@ enum {
         case 8: [message addNull]; break;
     }
     [connection sendPacket:message toHost:remoteHost port:[remotePort intValue]];
-    [connection receivePacket];
     [message release];
 }
 
