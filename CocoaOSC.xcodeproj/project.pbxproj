@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B5068C91460E41500BD27ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5068C81460E41500BD27ED /* Foundation.framework */; };
+		0B5068DF1460E46500BD27ED /* CocoaOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068D51460E46500BD27ED /* CocoaOSC.h */; };
+		0B5068E01460E46500BD27ED /* NS+OSCAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068D61460E46500BD27ED /* NS+OSCAdditions.h */; };
+		0B5068E11460E46500BD27ED /* NS+OSCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068D71460E46500BD27ED /* NS+OSCAdditions.m */; };
+		0B5068E21460E46500BD27ED /* OSCConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068D81460E46500BD27ED /* OSCConnection.h */; };
+		0B5068E31460E46500BD27ED /* OSCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068D91460E46500BD27ED /* OSCConnection.m */; };
+		0B5068E41460E46500BD27ED /* OSCConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068DA1460E46500BD27ED /* OSCConnectionDelegate.h */; };
+		0B5068E51460E46500BD27ED /* OSCDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068DB1460E46500BD27ED /* OSCDispatcher.h */; };
+		0B5068E61460E46500BD27ED /* OSCDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068DC1460E46500BD27ED /* OSCDispatcher.m */; };
+		0B5068E71460E46500BD27ED /* OSCPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068DD1460E46500BD27ED /* OSCPacket.h */; };
+		0B5068E81460E46500BD27ED /* OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068DE1460E46500BD27ED /* OSCPacket.m */; };
+		0B5069271460E4BC00BD27ED /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068EC1460E4BC00BD27ED /* AsyncSocket.h */; };
+		0B5069281460E4BC00BD27ED /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068ED1460E4BC00BD27ED /* AsyncSocket.m */; };
+		0B5069291460E4BC00BD27ED /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068EE1460E4BC00BD27ED /* AsyncUdpSocket.h */; };
+		0B50692A1460E4BC00BD27ED /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068EF1460E4BC00BD27ED /* AsyncUdpSocket.m */; };
+		0B50693E1460E4BC00BD27ED /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B50691D1460E4BC00BD27ED /* RegexKitLite.h */; };
+		0B50693F1460E4BC00BD27ED /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B50691F1460E4BC00BD27ED /* RegexKitLite.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B5068C51460E41500BD27ED /* libCocoaOSC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaOSC.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B5068C81460E41500BD27ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0B5068CC1460E41500BD27ED /* CocoaOSC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaOSC-Prefix.pch"; sourceTree = "<group>"; };
+		0B5068D51460E46500BD27ED /* CocoaOSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaOSC.h; sourceTree = "<group>"; };
+		0B5068D61460E46500BD27ED /* NS+OSCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NS+OSCAdditions.h"; sourceTree = "<group>"; };
+		0B5068D71460E46500BD27ED /* NS+OSCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NS+OSCAdditions.m"; sourceTree = "<group>"; };
+		0B5068D81460E46500BD27ED /* OSCConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCConnection.h; sourceTree = "<group>"; };
+		0B5068D91460E46500BD27ED /* OSCConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCConnection.m; sourceTree = "<group>"; };
+		0B5068DA1460E46500BD27ED /* OSCConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCConnectionDelegate.h; sourceTree = "<group>"; };
+		0B5068DB1460E46500BD27ED /* OSCDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCDispatcher.h; sourceTree = "<group>"; };
+		0B5068DC1460E46500BD27ED /* OSCDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCDispatcher.m; sourceTree = "<group>"; };
+		0B5068DD1460E46500BD27ED /* OSCPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCPacket.h; sourceTree = "<group>"; };
+		0B5068DE1460E46500BD27ED /* OSCPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCPacket.m; sourceTree = "<group>"; };
+		0B5068EB1460E4BC00BD27ED /* AsyncSocket Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "AsyncSocket Documentation.html"; sourceTree = "<group>"; };
+		0B5068EC1460E4BC00BD27ED /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		0B5068ED1460E4BC00BD27ED /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		0B5068EE1460E4BC00BD27ED /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		0B5068EF1460E4BC00BD27ED /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		0B5068FF1460E4BC00BD27ED /* changes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changes.txt; sourceTree = "<group>"; };
+		0B50691C1460E4BC00BD27ED /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
+		0B50691D1460E4BC00BD27ED /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		0B50691E1460E4BC00BD27ED /* RegexKitLite.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RegexKitLite.html; sourceTree = "<group>"; };
+		0B50691F1460E4BC00BD27ED /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B5068C21460E41500BD27ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B5068C91460E41500BD27ED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B5068BA1460E41500BD27ED = {
+			isa = PBXGroup;
+			children = (
+				0B5068CA1460E41500BD27ED /* CocoaOSC */,
+				0B5068E91460E4BC00BD27ED /* lib */,
+				0B5068C71460E41500BD27ED /* Frameworks */,
+				0B5068C61460E41500BD27ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0B5068C61460E41500BD27ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B5068C51460E41500BD27ED /* libCocoaOSC.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0B5068C71460E41500BD27ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B5068C81460E41500BD27ED /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0B5068CA1460E41500BD27ED /* CocoaOSC */ = {
+			isa = PBXGroup;
+			children = (
+				0B5068D51460E46500BD27ED /* CocoaOSC.h */,
+				0B5068D61460E46500BD27ED /* NS+OSCAdditions.h */,
+				0B5068D71460E46500BD27ED /* NS+OSCAdditions.m */,
+				0B5068D81460E46500BD27ED /* OSCConnection.h */,
+				0B5068D91460E46500BD27ED /* OSCConnection.m */,
+				0B5068DA1460E46500BD27ED /* OSCConnectionDelegate.h */,
+				0B5068DB1460E46500BD27ED /* OSCDispatcher.h */,
+				0B5068DC1460E46500BD27ED /* OSCDispatcher.m */,
+				0B5068DD1460E46500BD27ED /* OSCPacket.h */,
+				0B5068DE1460E46500BD27ED /* OSCPacket.m */,
+				0B5068CB1460E41500BD27ED /* Supporting Files */,
+			);
+			path = CocoaOSC;
+			sourceTree = "<group>";
+		};
+		0B5068CB1460E41500BD27ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B5068CC1460E41500BD27ED /* CocoaOSC-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0B5068E91460E4BC00BD27ED /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				0B5068EA1460E4BC00BD27ED /* cocoaasyncsocket */,
+				0B5069111460E4BC00BD27ED /* RegexKitLite */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		0B5068EA1460E4BC00BD27ED /* cocoaasyncsocket */ = {
+			isa = PBXGroup;
+			children = (
+				0B5068EB1460E4BC00BD27ED /* AsyncSocket Documentation.html */,
+				0B5068EC1460E4BC00BD27ED /* AsyncSocket.h */,
+				0B5068ED1460E4BC00BD27ED /* AsyncSocket.m */,
+				0B5068EE1460E4BC00BD27ED /* AsyncUdpSocket.h */,
+				0B5068EF1460E4BC00BD27ED /* AsyncUdpSocket.m */,
+				0B5068FF1460E4BC00BD27ED /* changes.txt */,
+			);
+			path = cocoaasyncsocket;
+			sourceTree = "<group>";
+		};
+		0B5069111460E4BC00BD27ED /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				0B50691C1460E4BC00BD27ED /* License.rtf */,
+				0B50691D1460E4BC00BD27ED /* RegexKitLite.h */,
+				0B50691E1460E4BC00BD27ED /* RegexKitLite.html */,
+				0B50691F1460E4BC00BD27ED /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0B5068C31460E41500BD27ED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B5068DF1460E46500BD27ED /* CocoaOSC.h in Headers */,
+				0B5068E01460E46500BD27ED /* NS+OSCAdditions.h in Headers */,
+				0B5068E21460E46500BD27ED /* OSCConnection.h in Headers */,
+				0B5068E41460E46500BD27ED /* OSCConnectionDelegate.h in Headers */,
+				0B5068E51460E46500BD27ED /* OSCDispatcher.h in Headers */,
+				0B5068E71460E46500BD27ED /* OSCPacket.h in Headers */,
+				0B5069271460E4BC00BD27ED /* AsyncSocket.h in Headers */,
+				0B5069291460E4BC00BD27ED /* AsyncUdpSocket.h in Headers */,
+				0B50693E1460E4BC00BD27ED /* RegexKitLite.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0B5068C41460E41500BD27ED /* CocoaOSC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B5068D21460E41500BD27ED /* Build configuration list for PBXNativeTarget "CocoaOSC" */;
+			buildPhases = (
+				0B5068C11460E41500BD27ED /* Sources */,
+				0B5068C21460E41500BD27ED /* Frameworks */,
+				0B5068C31460E41500BD27ED /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CocoaOSC;
+			productName = CocoaOSC;
+			productReference = 0B5068C51460E41500BD27ED /* libCocoaOSC.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B5068BC1460E41500BD27ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 0B5068BF1460E41500BD27ED /* Build configuration list for PBXProject "CocoaOSC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				English,
+			);
+			mainGroup = 0B5068BA1460E41500BD27ED;
+			productRefGroup = 0B5068C61460E41500BD27ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0B5068C41460E41500BD27ED /* CocoaOSC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B5068C11460E41500BD27ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B5068E11460E46500BD27ED /* NS+OSCAdditions.m in Sources */,
+				0B5068E31460E46500BD27ED /* OSCConnection.m in Sources */,
+				0B5068E61460E46500BD27ED /* OSCDispatcher.m in Sources */,
+				0B5068E81460E46500BD27ED /* OSCPacket.m in Sources */,
+				0B5069281460E4BC00BD27ED /* AsyncSocket.m in Sources */,
+				0B50692A1460E4BC00BD27ED /* AsyncUdpSocket.m in Sources */,
+				0B50693F1460E4BC00BD27ED /* RegexKitLite.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0B5068D01460E41500BD27ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0B5068D11460E41500BD27ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B5068D31460E41500BD27ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CocoaOSC.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaOSC/CocoaOSC-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0B5068D41460E41500BD27ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CocoaOSC.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaOSC/CocoaOSC-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B5068BF1460E41500BD27ED /* Build configuration list for PBXProject "CocoaOSC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B5068D01460E41500BD27ED /* Debug */,
+				0B5068D11460E41500BD27ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B5068D21460E41500BD27ED /* Build configuration list for PBXNativeTarget "CocoaOSC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B5068D31460E41500BD27ED /* Debug */,
+				0B5068D41460E41500BD27ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B5068BC1460E41500BD27ED /* Project object */;
+}
