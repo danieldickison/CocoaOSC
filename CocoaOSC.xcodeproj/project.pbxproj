@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B4C46861460E8B9007B5E06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C46851460E8B9007B5E06 /* Cocoa.framework */; };
+		0B4C46901460E8B9007B5E06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C468E1460E8B9007B5E06 /* InfoPlist.strings */; };
+		0B4C46981460E9A5007B5E06 /* CocoaOSC-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C468D1460E8B9007B5E06 /* CocoaOSC-Info.plist */; };
+		0B4C46C81460EAAF007B5E06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C46C71460EAAF007B5E06 /* UIKit.framework */; };
+		0B4C46C91460EAAF007B5E06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5068C81460E41500BD27ED /* Foundation.framework */; };
+		0B4C46CB1460EAAF007B5E06 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C46CA1460EAAF007B5E06 /* CoreGraphics.framework */; };
+		0B4C46DB1460EB0A007B5E06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C469B1460EA4B007B5E06 /* AppDelegate.m */; };
+		0B4C46DC1460EB0A007B5E06 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C469D1460EA4B007B5E06 /* AsyncUdpSocket.m */; };
+		0B4C46DD1460EB0A007B5E06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C469F1460EA4B007B5E06 /* main.m */; };
+		0B4C46DE1460EB0A007B5E06 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C46A01460EA4B007B5E06 /* MainWindow.xib */; };
+		0B4C46DF1460EB85007B5E06 /* libCocoaOSC-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5068C51460E41500BD27ED /* libCocoaOSC-ios.a */; };
 		0B5068C91460E41500BD27ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5068C81460E41500BD27ED /* Foundation.framework */; };
 		0B5068DF1460E46500BD27ED /* CocoaOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068D51460E46500BD27ED /* CocoaOSC.h */; };
 		0B5068E01460E46500BD27ED /* NS+OSCAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068D61460E46500BD27ED /* NS+OSCAdditions.h */; };
@@ -27,7 +38,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B5068C51460E41500BD27ED /* libCocoaOSC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaOSC.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4C46841460E8B9007B5E06 /* CocoaOSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaOSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4C46851460E8B9007B5E06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		0B4C46881460E8B9007B5E06 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0B4C46891460E8B9007B5E06 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0B4C468A1460E8B9007B5E06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0B4C468D1460E8B9007B5E06 /* CocoaOSC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaOSC-Info.plist"; sourceTree = "<group>"; };
+		0B4C468F1460E8B9007B5E06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B4C469A1460EA4B007B5E06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0B4C469B1460EA4B007B5E06 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0B4C469C1460EA4B007B5E06 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		0B4C469D1460EA4B007B5E06 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		0B4C469E1460EA4B007B5E06 /* CocoaOSCDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaOSCDemo-Info.plist"; sourceTree = "<group>"; };
+		0B4C469F1460EA4B007B5E06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0B4C46A01460EA4B007B5E06 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		0B4C46A51460EA4B007B5E06 /* CocoaOSC_Mac_Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaOSC_Mac_Demo-Info.plist"; sourceTree = "<group>"; };
+		0B4C46A61460EA4B007B5E06 /* CocoaOSC_Mac_Demo_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaOSC_Mac_Demo_Prefix.pch; sourceTree = "<group>"; };
+		0B4C46A81460EA4B007B5E06 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		0B4C46AA1460EA4B007B5E06 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B4C46AC1460EA4B007B5E06 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0B4C46AE1460EA4B007B5E06 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MyDocument.xib; sourceTree = "<group>"; };
+		0B4C46B01460EA4B007B5E06 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/PacketView.xib; sourceTree = "<group>"; };
+		0B4C46B11460EA4B007B5E06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0B4C46B21460EA4B007B5E06 /* MyDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDocument.h; sourceTree = "<group>"; };
+		0B4C46B31460EA4B007B5E06 /* MyDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDocument.m; sourceTree = "<group>"; };
+		0B4C46B41460EA4B007B5E06 /* MyDocumentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDocumentModel.h; sourceTree = "<group>"; };
+		0B4C46B51460EA4B007B5E06 /* MyDocumentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDocumentModel.m; sourceTree = "<group>"; };
+		0B4C46B61460EA4B007B5E06 /* MyMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMethod.h; sourceTree = "<group>"; };
+		0B4C46B71460EA4B007B5E06 /* MyMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMethod.m; sourceTree = "<group>"; };
+		0B4C46B81460EA4B007B5E06 /* PacketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PacketViewController.h; sourceTree = "<group>"; };
+		0B4C46B91460EA4B007B5E06 /* PacketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PacketViewController.m; sourceTree = "<group>"; };
+		0B4C46C51460EAAF007B5E06 /* CocoaOSCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaOSCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4C46C71460EAAF007B5E06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0B4C46CA1460EAAF007B5E06 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0B5068C51460E41500BD27ED /* libCocoaOSC-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCocoaOSC-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5068C81460E41500BD27ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0B5068CC1460E41500BD27ED /* CocoaOSC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaOSC-Prefix.pch"; sourceTree = "<group>"; };
 		0B5068D51460E46500BD27ED /* CocoaOSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaOSC.h; sourceTree = "<group>"; };
@@ -53,6 +97,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0B4C46801460E8B9007B5E06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B4C46861460E8B9007B5E06 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B4C46C21460EAAF007B5E06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B4C46C81460EAAF007B5E06 /* UIKit.framework in Frameworks */,
+				0B4C46C91460EAAF007B5E06 /* Foundation.framework in Frameworks */,
+				0B4C46CB1460EAAF007B5E06 /* CoreGraphics.framework in Frameworks */,
+				0B4C46DF1460EB85007B5E06 /* libCocoaOSC-ios.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0B5068C21460E41500BD27ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,10 +127,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B4C46871460E8B9007B5E06 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B4C46881460E8B9007B5E06 /* AppKit.framework */,
+				0B4C46891460E8B9007B5E06 /* CoreData.framework */,
+				0B4C468A1460E8B9007B5E06 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0B4C468C1460E8B9007B5E06 /* Mac Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B4C468D1460E8B9007B5E06 /* CocoaOSC-Info.plist */,
+				0B4C468E1460E8B9007B5E06 /* InfoPlist.strings */,
+			);
+			name = "Mac Supporting Files";
+			sourceTree = "<group>";
+		};
+		0B4C46991460EA4B007B5E06 /* Demo-ios */ = {
+			isa = PBXGroup;
+			children = (
+				0B4C469A1460EA4B007B5E06 /* AppDelegate.h */,
+				0B4C469B1460EA4B007B5E06 /* AppDelegate.m */,
+				0B4C469C1460EA4B007B5E06 /* AsyncUdpSocket.h */,
+				0B4C469D1460EA4B007B5E06 /* AsyncUdpSocket.m */,
+				0B4C469E1460EA4B007B5E06 /* CocoaOSCDemo-Info.plist */,
+				0B4C469F1460EA4B007B5E06 /* main.m */,
+				0B4C46A01460EA4B007B5E06 /* MainWindow.xib */,
+			);
+			path = "Demo-ios";
+			sourceTree = "<group>";
+		};
+		0B4C46A11460EA4B007B5E06 /* Demo-mac */ = {
+			isa = PBXGroup;
+			children = (
+				0B4C46A51460EA4B007B5E06 /* CocoaOSC_Mac_Demo-Info.plist */,
+				0B4C46A61460EA4B007B5E06 /* CocoaOSC_Mac_Demo_Prefix.pch */,
+				0B4C46A71460EA4B007B5E06 /* Credits.rtf */,
+				0B4C46A91460EA4B007B5E06 /* InfoPlist.strings */,
+				0B4C46AB1460EA4B007B5E06 /* MainMenu.xib */,
+				0B4C46AD1460EA4B007B5E06 /* MyDocument.xib */,
+				0B4C46AF1460EA4B007B5E06 /* PacketView.xib */,
+				0B4C46B11460EA4B007B5E06 /* main.m */,
+				0B4C46B21460EA4B007B5E06 /* MyDocument.h */,
+				0B4C46B31460EA4B007B5E06 /* MyDocument.m */,
+				0B4C46B41460EA4B007B5E06 /* MyDocumentModel.h */,
+				0B4C46B51460EA4B007B5E06 /* MyDocumentModel.m */,
+				0B4C46B61460EA4B007B5E06 /* MyMethod.h */,
+				0B4C46B71460EA4B007B5E06 /* MyMethod.m */,
+				0B4C46B81460EA4B007B5E06 /* PacketViewController.h */,
+				0B4C46B91460EA4B007B5E06 /* PacketViewController.m */,
+			);
+			path = "Demo-mac";
+			sourceTree = "<group>";
+		};
 		0B5068BA1460E41500BD27ED = {
 			isa = PBXGroup;
 			children = (
 				0B5068CA1460E41500BD27ED /* CocoaOSC */,
+				0B4C46991460EA4B007B5E06 /* Demo-ios */,
+				0B4C46A11460EA4B007B5E06 /* Demo-mac */,
 				0B5068E91460E4BC00BD27ED /* lib */,
 				0B5068C71460E41500BD27ED /* Frameworks */,
 				0B5068C61460E41500BD27ED /* Products */,
@@ -77,7 +198,9 @@
 		0B5068C61460E41500BD27ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0B5068C51460E41500BD27ED /* libCocoaOSC.a */,
+				0B5068C51460E41500BD27ED /* libCocoaOSC-ios.a */,
+				0B4C46841460E8B9007B5E06 /* CocoaOSC.framework */,
+				0B4C46C51460EAAF007B5E06 /* CocoaOSCDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +209,10 @@
 			isa = PBXGroup;
 			children = (
 				0B5068C81460E41500BD27ED /* Foundation.framework */,
+				0B4C46851460E8B9007B5E06 /* Cocoa.framework */,
+				0B4C46C71460EAAF007B5E06 /* UIKit.framework */,
+				0B4C46CA1460EAAF007B5E06 /* CoreGraphics.framework */,
+				0B4C46871460E8B9007B5E06 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,6 +231,7 @@
 				0B5068DD1460E46500BD27ED /* OSCPacket.h */,
 				0B5068DE1460E46500BD27ED /* OSCPacket.m */,
 				0B5068CB1460E41500BD27ED /* Supporting Files */,
+				0B4C468C1460E8B9007B5E06 /* Mac Supporting Files */,
 			);
 			path = CocoaOSC;
 			sourceTree = "<group>";
@@ -152,6 +280,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0B4C46811460E8B9007B5E06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0B5068C31460E41500BD27ED /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,9 +306,44 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0B5068C41460E41500BD27ED /* CocoaOSC */ = {
+		0B4C46831460E8B9007B5E06 /* CocoaOSC-mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B5068D21460E41500BD27ED /* Build configuration list for PBXNativeTarget "CocoaOSC" */;
+			buildConfigurationList = 0B4C46951460E8B9007B5E06 /* Build configuration list for PBXNativeTarget "CocoaOSC-mac" */;
+			buildPhases = (
+				0B4C467F1460E8B9007B5E06 /* Sources */,
+				0B4C46801460E8B9007B5E06 /* Frameworks */,
+				0B4C46811460E8B9007B5E06 /* Headers */,
+				0B4C46821460E8B9007B5E06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CocoaOSC-mac";
+			productName = CocoaOSC;
+			productReference = 0B4C46841460E8B9007B5E06 /* CocoaOSC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0B4C46C41460EAAF007B5E06 /* CocoaOSCDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B4C46D81460EAAF007B5E06 /* Build configuration list for PBXNativeTarget "CocoaOSCDemo" */;
+			buildPhases = (
+				0B4C46C11460EAAF007B5E06 /* Sources */,
+				0B4C46C21460EAAF007B5E06 /* Frameworks */,
+				0B4C46C31460EAAF007B5E06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CocoaOSCDemo;
+			productName = CocoaOSCDemo;
+			productReference = 0B4C46C51460EAAF007B5E06 /* CocoaOSCDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0B5068C41460E41500BD27ED /* CocoaOSC-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B5068D21460E41500BD27ED /* Build configuration list for PBXNativeTarget "CocoaOSC-ios" */;
 			buildPhases = (
 				0B5068C11460E41500BD27ED /* Sources */,
 				0B5068C21460E41500BD27ED /* Frameworks */,
@@ -183,9 +353,9 @@
 			);
 			dependencies = (
 			);
-			name = CocoaOSC;
+			name = "CocoaOSC-ios";
 			productName = CocoaOSC;
-			productReference = 0B5068C51460E41500BD27ED /* libCocoaOSC.a */;
+			productReference = 0B5068C51460E41500BD27ED /* libCocoaOSC-ios.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -209,12 +379,51 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0B5068C41460E41500BD27ED /* CocoaOSC */,
+				0B5068C41460E41500BD27ED /* CocoaOSC-ios */,
+				0B4C46831460E8B9007B5E06 /* CocoaOSC-mac */,
+				0B4C46C41460EAAF007B5E06 /* CocoaOSCDemo */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		0B4C46821460E8B9007B5E06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B4C46901460E8B9007B5E06 /* InfoPlist.strings in Resources */,
+				0B4C46981460E9A5007B5E06 /* CocoaOSC-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B4C46C31460EAAF007B5E06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B4C46DE1460EB0A007B5E06 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		0B4C467F1460E8B9007B5E06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B4C46C11460EAAF007B5E06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B4C46DB1460EB0A007B5E06 /* AppDelegate.m in Sources */,
+				0B4C46DC1460EB0A007B5E06 /* AsyncUdpSocket.m in Sources */,
+				0B4C46DD1460EB0A007B5E06 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0B5068C11460E41500BD27ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,7 +440,129 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		0B4C468E1460E8B9007B5E06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B4C468F1460E8B9007B5E06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0B4C46A71460EA4B007B5E06 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B4C46A81460EA4B007B5E06 /* English */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		0B4C46A91460EA4B007B5E06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B4C46AA1460EA4B007B5E06 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0B4C46AB1460EA4B007B5E06 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B4C46AC1460EA4B007B5E06 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		0B4C46AD1460EA4B007B5E06 /* MyDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B4C46AE1460EA4B007B5E06 /* English */,
+			);
+			name = MyDocument.xib;
+			sourceTree = "<group>";
+		};
+		0B4C46AF1460EA4B007B5E06 /* PacketView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B4C46B01460EA4B007B5E06 /* English */,
+			);
+			name = PacketView.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		0B4C46961460E8B9007B5E06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaOSC/CocoaOSC-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "CocoaOSC/CocoaOSC-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		0B4C46971460E8B9007B5E06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaOSC/CocoaOSC-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "CocoaOSC/CocoaOSC-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		0B4C46D91460EAAF007B5E06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INFOPLIST_FILE = "Demo-ios/CocoaOSCDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0B4C46DA1460EAAF007B5E06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INFOPLIST_FILE = "Demo-ios/CocoaOSCDemo-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		0B5068D01460E41500BD27ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -299,6 +630,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0B4C46951460E8B9007B5E06 /* Build configuration list for PBXNativeTarget "CocoaOSC-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B4C46961460E8B9007B5E06 /* Debug */,
+				0B4C46971460E8B9007B5E06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0B4C46D81460EAAF007B5E06 /* Build configuration list for PBXNativeTarget "CocoaOSCDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B4C46D91460EAAF007B5E06 /* Debug */,
+				0B4C46DA1460EAAF007B5E06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		0B5068BF1460E41500BD27ED /* Build configuration list for PBXProject "CocoaOSC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -308,13 +655,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B5068D21460E41500BD27ED /* Build configuration list for PBXNativeTarget "CocoaOSC" */ = {
+		0B5068D21460E41500BD27ED /* Build configuration list for PBXNativeTarget "CocoaOSC-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B5068D31460E41500BD27ED /* Debug */,
 				0B5068D41460E41500BD27ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
