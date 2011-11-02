@@ -25,7 +25,6 @@
 		0B4C47011460EC39007B5E06 /* MyDocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C46B51460EA4B007B5E06 /* MyDocumentModel.m */; };
 		0B4C47021460EC39007B5E06 /* MyMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C46B71460EA4B007B5E06 /* MyMethod.m */; };
 		0B4C47031460EC39007B5E06 /* PacketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C46B91460EA4B007B5E06 /* PacketViewController.m */; };
-		0B4C47091460ECDB007B5E06 /* CocoaOSC.framework in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C46841460E8B9007B5E06 /* CocoaOSC.framework */; };
 		0B4C470A1460ED2E007B5E06 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C46A71460EA4B007B5E06 /* Credits.rtf */; };
 		0B4C470B1460ED39007B5E06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C46A91460EA4B007B5E06 /* InfoPlist.strings */; };
 		0B4C470C1460F49A007B5E06 /* CocoaOSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C46841460E8B9007B5E06 /* CocoaOSC.framework */; };
@@ -44,9 +43,10 @@
 		0B4C471A1460F55E007B5E06 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068EF1460E4BC00BD27ED /* AsyncUdpSocket.m */; };
 		0B4C471B1460F565007B5E06 /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B50691D1460E4BC00BD27ED /* RegexKitLite.h */; };
 		0B4C471C1460F565007B5E06 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B50691F1460E4BC00BD27ED /* RegexKitLite.m */; };
-		0B4C471E1460F592007B5E06 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C471D1460F592007B5E06 /* libicucore.dylib */; };
 		0B4C47231460FBA3007B5E06 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C471F1460FB6F007B5E06 /* libicucore.dylib */; };
 		0B4C47241460FBA8007B5E06 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C47211460FB76007B5E06 /* CFNetwork.framework */; };
+		0B4C47FB146104F8007B5E06 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C47FA146104F8007B5E06 /* libicucore.dylib */; };
+		0B4C47FD146105B6007B5E06 /* CocoaOSC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0B4C46841460E8B9007B5E06 /* CocoaOSC.framework */; };
 		0B5068C91460E41500BD27ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5068C81460E41500BD27ED /* Foundation.framework */; };
 		0B5068DF1460E46500BD27ED /* CocoaOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068D51460E46500BD27ED /* CocoaOSC.h */; };
 		0B5068E01460E46500BD27ED /* NS+OSCAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068D61460E46500BD27ED /* NS+OSCAdditions.h */; };
@@ -83,6 +83,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0B4C47FC146105A7007B5E06 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0B4C47FD146105B6007B5E06 /* CocoaOSC.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0B4C46841460E8B9007B5E06 /* CocoaOSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaOSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4C46851460E8B9007B5E06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -116,9 +129,9 @@
 		0B4C46C71460EAAF007B5E06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0B4C46CA1460EAAF007B5E06 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0B4C46E41460EC07007B5E06 /* CocoaOSCmac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaOSCmac.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B4C471D1460F592007B5E06 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libicucore.dylib; sourceTree = DEVELOPER_DIR; };
 		0B4C471F1460FB6F007B5E06 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		0B4C47211460FB76007B5E06 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0B4C47FA146104F8007B5E06 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libicucore.dylib; sourceTree = DEVELOPER_DIR; };
 		0B5068C51460E41500BD27ED /* libCocoaOSC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaOSC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5068C81460E41500BD27ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0B5068CC1460E41500BD27ED /* CocoaOSC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaOSC-Prefix.pch"; sourceTree = "<group>"; };
@@ -149,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B4C471E1460F592007B5E06 /* libicucore.dylib in Frameworks */,
+				0B4C47FB146104F8007B5E06 /* libicucore.dylib in Frameworks */,
 				0B4C46861460E8B9007B5E06 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,9 +257,6 @@
 		0B5068BA1460E41500BD27ED = {
 			isa = PBXGroup;
 			children = (
-				0B4C47211460FB76007B5E06 /* CFNetwork.framework */,
-				0B4C471F1460FB6F007B5E06 /* libicucore.dylib */,
-				0B4C471D1460F592007B5E06 /* libicucore.dylib */,
 				0B5068CA1460E41500BD27ED /* CocoaOSC */,
 				0B4C46991460EA4B007B5E06 /* Demo-ios */,
 				0B4C46A11460EA4B007B5E06 /* Demo-mac */,
@@ -270,6 +280,9 @@
 		0B5068C71460E41500BD27ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B4C47FA146104F8007B5E06 /* libicucore.dylib */,
+				0B4C47211460FB76007B5E06 /* CFNetwork.framework */,
+				0B4C471F1460FB6F007B5E06 /* libicucore.dylib */,
 				0B5068C81460E41500BD27ED /* Foundation.framework */,
 				0B4C46851460E8B9007B5E06 /* Cocoa.framework */,
 				0B4C46C71460EAAF007B5E06 /* UIKit.framework */,
@@ -419,6 +432,7 @@
 				0B4C46E01460EC07007B5E06 /* Sources */,
 				0B4C46E11460EC07007B5E06 /* Frameworks */,
 				0B4C46E21460EC07007B5E06 /* Resources */,
+				0B4C47FC146105A7007B5E06 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -497,7 +511,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B4C47091460ECDB007B5E06 /* CocoaOSC.framework in Resources */,
 				0B4C46FC1460EC29007B5E06 /* MainMenu.xib in Resources */,
 				0B4C46FD1460EC29007B5E06 /* MyDocument.xib in Resources */,
 				0B4C46FE1460EC29007B5E06 /* PacketView.xib in Resources */,
@@ -642,10 +655,12 @@
 				GCC_PREFIX_HEADER = "CocoaOSC/CocoaOSC-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "CocoaOSC/CocoaOSC-Info.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = CocoaOSC;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -668,9 +683,11 @@
 				GCC_PREFIX_HEADER = "CocoaOSC/CocoaOSC-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "CocoaOSC/CocoaOSC-Info.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = CocoaOSC;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -820,6 +837,7 @@
 				0B4C46971460E8B9007B5E06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B4C46D81460EAAF007B5E06 /* Build configuration list for PBXNativeTarget "CocoaOSCDemo-ios" */ = {
 			isa = XCConfigurationList;
@@ -828,6 +846,7 @@
 				0B4C46DA1460EAAF007B5E06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B4C46F91460EC07007B5E06 /* Build configuration list for PBXNativeTarget "CocoaOSCDemo-mac" */ = {
 			isa = XCConfigurationList;
@@ -836,6 +855,7 @@
 				0B4C46FB1460EC07007B5E06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B5068BF1460E41500BD27ED /* Build configuration list for PBXProject "CocoaOSC" */ = {
 			isa = XCConfigurationList;
