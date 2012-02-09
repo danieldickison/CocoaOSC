@@ -19,7 +19,6 @@
 @interface MyDocument : NSDocument <OSCConnectionDelegate, NSKeyedUnarchiverDelegate>
 {
     OSCConnection *connection;
-    OSCPacket *newPacket;
     
     // This ivar is a hack to work around the bug in NSArrayController where KVO notifications never contain the new or old value in the change dictionary.
     MyMethod *previousMethodTableSelection;
@@ -50,7 +49,8 @@
 - (IBAction)newPacket:(NSButton *)sender;
 
 - (IBAction)tableClickAction:(NSTableView *)sender;
-- (IBAction)tableDoubleClickAction:(NSTableView *)sender;
+- (IBAction)methodsDoubleClickAction:(NSTableView *)sender;
+- (IBAction)packetsDoubleClickAction:(NSTableView *)sender;
 
 - (void)sendPacket:(OSCPacket *)packet;
 

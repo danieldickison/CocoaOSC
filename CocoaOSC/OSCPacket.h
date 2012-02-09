@@ -12,7 +12,7 @@
 /**
  OSCPacket is a class cluster.  The initializer initWithData: returns one of the two subclasses depending on whether the data describes an OSC message or bundle.  This is used for receiving and parsing OSC packets.  To construct a new packet for sending, using the init initializer of one of the subclasses directly, then call encode to get the network data.
  */
-@interface OSCPacket : NSObject
+@interface OSCPacket : NSObject <NSCopying, NSCoding>
 
 // Decode/encode from/to NSData.
 - (id)initWithData:(NSData *)data;

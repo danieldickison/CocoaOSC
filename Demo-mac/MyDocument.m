@@ -59,8 +59,8 @@ static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
     [super windowControllerDidLoadNib:aController];
     [self.packetInspector setContentView:[self.packetViewController view]];
     [self.newPacketSheet setContentView:[self.newPacketViewController view]];
-    [self.methodsTable setDoubleAction:@selector(tableDoubleClickAction:)];
-    [self.sentPacketsTable setDoubleAction:@selector(tableDoubleClickAction:)];
+    [self.methodsTable setDoubleAction:@selector(methodsDoubleClickAction:)];
+    [self.sentPacketsTable setDoubleAction:@selector(packetsDoubleClickAction:)];
     
     [self.methodsController addObserver:self forKeyPath:@"selectionIndex" options:0 context:KVO_CONTEXT];
 }
@@ -99,9 +99,20 @@ static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
 {
 }
 
-- (IBAction)tableDoubleClickAction:(NSTableView *)sender
+- (IBAction)methodsDoubleClickAction:(NSTableView *)sender
 {
     [self.packetInspector makeKeyAndOrderFront:self];
+}
+
+- (IBAction)packetsDoubleClickAction:(NSTableView *)sender
+{
+    NSDictionary *selected = [self.sentPacketsController.selectedObjects lastObject];
+    if (selected)
+    {
+        OSCPacket *newPacket = [[selected objectForKey:@"packet"] copy];
+        [self.newPacketViewController setRepresentedObject:newPacket];
+        [NSApp beginSheet:self.newPacketSheet modalForWindow:[self windowForSheet] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+    }
 }
 
 
@@ -199,7 +210,7 @@ static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
 
 - (IBAction)newPacket:(NSButton *)sender
 {
-    newPacket = [[OSCMutableMessage alloc] init];
+    OSCPacket *newPacket = [[OSCMutableMessage alloc] init];
     [self.newPacketViewController setRepresentedObject:newPacket];
     [NSApp beginSheet:self.newPacketSheet modalForWindow:[self windowForSheet] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
 }
@@ -207,6 +218,9 @@ static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
 
 - (void)sendPacket:(OSCPacket *)packet
 {
+    if (!packet) return;
+    
+    [self.sentPacketsController addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSDate date], @"date", packet, @"packet", nil]];
     if (self.connected)
     {
         [connection sendPacket:packet];

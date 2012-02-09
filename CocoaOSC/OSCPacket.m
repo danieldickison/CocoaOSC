@@ -131,6 +131,28 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    [self release];
+    self = nil;
+    NSData *data = [aDecoder decodeObjectForKey:@"data"];
+    if (data) {
+        self = [[OSCPacket alloc] initWithData:data];
+    }
+    return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    // There are certainly more efficient ways to do this, but this is good enough for now.
+    return [[OSCPacket alloc] initWithData:[self encode]];
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:[self encode] forKey:@"data"];
+}
+
 + (NSData *)dataForContentObject:(id)obj
 {
     if ([obj isKindOfClass:[NSNumber class]])
