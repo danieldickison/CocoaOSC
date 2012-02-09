@@ -18,7 +18,7 @@
 @property (retain) OSCPacket *lastReceivedPacket;
 @property (copy) NSDate *lastReceivedDate;
 @property (copy) NSString *address;
-- (BOOL)validateAddress:(id *)ioAddress error:(NSError **)outError;
++ (BOOL)validateAddress:(id *)ioAddress error:(NSError **)outError;
 - (void)receivedPacket:(OSCPacket *)packet;
 
 @end

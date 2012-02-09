@@ -47,7 +47,7 @@
     }
 }
 
-- (BOOL)validateAddress:(id *)ioAddress error:(NSError **)outError
++ (BOOL)validateAddress:(id *)ioAddress error:(NSError **)outError
 {
     if (![OSCDispatcher splitAddressComponents:*ioAddress])
     {
@@ -58,6 +58,10 @@
         return NO;
     }
     return YES;
+}
+- (BOOL)validateAddress:(id *)ioAddress error:(NSError **)outError
+{
+    return [[self class] validateAddress:ioAddress error:outError];
 }
 
 - (void)receivedPacket:(OSCPacket *)packet

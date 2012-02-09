@@ -168,7 +168,7 @@
 													</object>
 													<object class="NSAttributedString" key="NS.nan">
 														<string key="NSString">NaN</string>
-														<object class="NSDictionary" key="NSAttributes" id="500600859">
+														<object class="NSDictionary" key="NSAttributes" id="7719441">
 															<bool key="EncodedWithXMLCoder">YES</bool>
 															<object class="NSArray" key="dict.sortedKeys" id="0">
 																<bool key="EncodedWithXMLCoder">YES</bool>
@@ -591,7 +591,7 @@
 													</object>
 													<object class="NSAttributedString" key="NS.nan">
 														<string key="NSString">NaN</string>
-														<reference key="NSAttributes" ref="500600859"/>
+														<reference key="NSAttributes" ref="7719441"/>
 													</object>
 													<real value="0.0" key="NS.min"/>
 													<real value="65535" key="NS.max"/>
@@ -921,7 +921,7 @@
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
-			<object class="NSArrayController" id="678285195">
+			<object class="NSArrayController" id="818733504">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>date</string>
@@ -1124,7 +1124,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">sentPacketsController</string>
 						<reference key="source" ref="512844837"/>
-						<reference key="destination" ref="678285195"/>
+						<reference key="destination" ref="818733504"/>
 					</object>
 					<int key="connectionID">100256</int>
 				</object>
@@ -1423,10 +1423,10 @@
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: arrangedObjects.date</string>
 						<reference key="source" ref="552162264"/>
-						<reference key="destination" ref="678285195"/>
+						<reference key="destination" ref="818733504"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="552162264"/>
-							<reference key="NSDestination" ref="678285195"/>
+							<reference key="NSDestination" ref="818733504"/>
 							<string key="NSLabel">value: arrangedObjects.date</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">arrangedObjects.date</string>
@@ -1443,10 +1443,10 @@
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: arrangedObjects.packet.address</string>
 						<reference key="source" ref="858107900"/>
-						<reference key="destination" ref="678285195"/>
+						<reference key="destination" ref="818733504"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="858107900"/>
-							<reference key="NSDestination" ref="678285195"/>
+							<reference key="NSDestination" ref="818733504"/>
 							<string key="NSLabel">value: arrangedObjects.packet.address</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">arrangedObjects.packet.address</string>
@@ -1510,10 +1510,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">contentArray: selection.sentPackets</string>
-						<reference key="source" ref="678285195"/>
+						<reference key="source" ref="818733504"/>
 						<reference key="destination" ref="384981965"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="678285195"/>
+							<reference key="NSSource" ref="818733504"/>
 							<reference key="NSDestination" ref="384981965"/>
 							<string key="NSLabel">contentArray: selection.sentPackets</string>
 							<string key="NSBinding">contentArray</string>
@@ -1952,7 +1952,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">100255</int>
-						<reference key="object" ref="678285195"/>
+						<reference key="object" ref="818733504"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Sent Packets</string>
 					</object>
@@ -2135,20 +2135,22 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addMethod:</string>
 							<string>connect:</string>
+							<string>methodsDoubleClickAction:</string>
 							<string>newPacket:</string>
+							<string>packetsDoubleClickAction:</string>
 							<string>removeSelectedMethod:</string>
 							<string>startServer:</string>
 							<string>tableClickAction:</string>
-							<string>tableDoubleClickAction:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSButton</string>
 							<string>NSButton</string>
-							<string>NSButton</string>
-							<string>NSButton</string>
+							<string>NSTableView</string>
 							<string>NSButton</string>
 							<string>NSTableView</string>
+							<string>NSButton</string>
+							<string>NSButton</string>
 							<string>NSTableView</string>
 						</object>
 					</object>
@@ -2158,11 +2160,12 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addMethod:</string>
 							<string>connect:</string>
+							<string>methodsDoubleClickAction:</string>
 							<string>newPacket:</string>
+							<string>packetsDoubleClickAction:</string>
 							<string>removeSelectedMethod:</string>
 							<string>startServer:</string>
 							<string>tableClickAction:</string>
-							<string>tableDoubleClickAction:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2175,8 +2178,16 @@
 								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBActionInfo">
+								<string key="name">methodsDoubleClickAction:</string>
+								<string key="candidateClassName">NSTableView</string>
+							</object>
+							<object class="IBActionInfo">
 								<string key="name">newPacket:</string>
 								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">packetsDoubleClickAction:</string>
+								<string key="candidateClassName">NSTableView</string>
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">removeSelectedMethod:</string>
@@ -2188,10 +2199,6 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">tableClickAction:</string>
-								<string key="candidateClassName">NSTableView</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">tableDoubleClickAction:</string>
 								<string key="candidateClassName">NSTableView</string>
 							</object>
 						</object>

@@ -259,7 +259,34 @@ static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
 //- (void)oscConnection:(OSCConnection *)connection willSendPacket:(OSCPacket *)packet;
 //- (void)oscConnection:(OSCConnection *)connection didSendPacket:(OSCPacket *)packet;
 
-//- (void)oscConnection:(OSCConnection *)connection didReceivePacket:(OSCPacket *)packet;
+- (void)maybeAddNewMethod:(NSString *)address
+{
+    if ([MyMethod validateAddress:&address error:NULL])
+    {
+        BOOL found = NO;
+        for (MyMethod *method in model.methods)
+        {
+            if ([method.address isEqualToString:address])
+            {
+                found = YES;
+                break;
+            }
+        }
+        if (!found)
+        {
+            MyMethod *method = [[MyMethod alloc] init];
+            method.dispatcher = connection.dispatcher;
+            method.address = address;
+            [self.methodsController addObject:method];
+        }
+    }
+}
+
+- (void)oscConnection:(OSCConnection *)conn didReceivePacket:(OSCPacket *)packet
+{
+    [self maybeAddNewMethod:packet.address];
+}
+
 - (void)oscConnection:(OSCConnection *)conn didReceivePacket:(OSCPacket *)packet fromHost:(NSString *)host port:(UInt16)port
 {
     if (host)
@@ -267,6 +294,7 @@ static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
         self.model.remoteHost = host;
         self.model.remotePort = port;
     }
+    [self maybeAddNewMethod:packet.address];
 }
 //- (void)oscConnection:(OSCConnection *)connection failedToReceivePacketWithError:(NSError *)error;
 
