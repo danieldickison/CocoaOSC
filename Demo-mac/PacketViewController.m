@@ -27,19 +27,20 @@
     [self.textInputSheet orderOut:nil];
     if (code == 1)
     {
+        NSString *string = self.textInputString ? self.textInputString : @"";
         switch (self.textInputType)
         {
             case 0:
-                [self.mutableMessage addString:self.textInputString];
+                [self.mutableMessage addString:string];
                 break;
             case 1:
-                [self.mutableMessage addInt:[self.textInputString intValue]];
+                [self.mutableMessage addInt:[string intValue]];
                 break;
             case 2:
-                [self.mutableMessage addFloat:[self.textInputString floatValue]];
+                [self.mutableMessage addFloat:[string floatValue]];
                 break;
             case 3:
-                [self.mutableMessage addBlob:[self.textInputString dataUsingEncoding:NSUTF8StringEncoding]];
+                [self.mutableMessage addBlob:[string dataUsingEncoding:NSUTF8StringEncoding]];
                 break;
         }
     }
