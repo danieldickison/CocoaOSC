@@ -37,10 +37,6 @@
 		0B4C47141460F4B8007B5E06 /* OSCDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068DC1460E46500BD27ED /* OSCDispatcher.m */; };
 		0B4C47151460F4B8007B5E06 /* OSCPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068DD1460E46500BD27ED /* OSCPacket.h */; };
 		0B4C47161460F4B8007B5E06 /* OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068DE1460E46500BD27ED /* OSCPacket.m */; };
-		0B4C47171460F55E007B5E06 /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068EC1460E4BC00BD27ED /* AsyncSocket.h */; };
-		0B4C47181460F55E007B5E06 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068ED1460E4BC00BD27ED /* AsyncSocket.m */; };
-		0B4C47191460F55E007B5E06 /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068EE1460E4BC00BD27ED /* AsyncUdpSocket.h */; };
-		0B4C471A1460F55E007B5E06 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068EF1460E4BC00BD27ED /* AsyncUdpSocket.m */; };
 		0B4C471B1460F565007B5E06 /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B50691D1460E4BC00BD27ED /* RegexKitLite.h */; };
 		0B4C471C1460F565007B5E06 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B50691F1460E4BC00BD27ED /* RegexKitLite.m */; };
 		0B4C47231460FBA3007B5E06 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C471F1460FB6F007B5E06 /* libicucore.dylib */; };
@@ -58,12 +54,16 @@
 		0B5068E61460E46500BD27ED /* OSCDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068DC1460E46500BD27ED /* OSCDispatcher.m */; };
 		0B5068E71460E46500BD27ED /* OSCPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068DD1460E46500BD27ED /* OSCPacket.h */; };
 		0B5068E81460E46500BD27ED /* OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068DE1460E46500BD27ED /* OSCPacket.m */; };
-		0B5069271460E4BC00BD27ED /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068EC1460E4BC00BD27ED /* AsyncSocket.h */; };
-		0B5069281460E4BC00BD27ED /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068ED1460E4BC00BD27ED /* AsyncSocket.m */; };
-		0B5069291460E4BC00BD27ED /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068EE1460E4BC00BD27ED /* AsyncUdpSocket.h */; };
-		0B50692A1460E4BC00BD27ED /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068EF1460E4BC00BD27ED /* AsyncUdpSocket.m */; };
 		0B50693E1460E4BC00BD27ED /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B50691D1460E4BC00BD27ED /* RegexKitLite.h */; };
 		0B50693F1460E4BC00BD27ED /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B50691F1460E4BC00BD27ED /* RegexKitLite.m */; };
+		0BFFAAD215F42EC50051E00F /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFFAACE15F42EC50051E00F /* AsyncSocket.h */; };
+		0BFFAAD315F42EC50051E00F /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFAACF15F42EC50051E00F /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		0BFFAAD415F42EC50051E00F /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFFAAD015F42EC50051E00F /* AsyncUdpSocket.h */; };
+		0BFFAAD515F42EC50051E00F /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFAAD115F42EC50051E00F /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		0BFFAAD615F42EEE0051E00F /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFFAACE15F42EC50051E00F /* AsyncSocket.h */; };
+		0BFFAAD715F42EF20051E00F /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFAACF15F42EC50051E00F /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		0BFFAAD815F42EF40051E00F /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFFAAD015F42EC50051E00F /* AsyncUdpSocket.h */; };
+		0BFFAAD915F42EF70051E00F /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFAAD115F42EC50051E00F /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,16 +145,14 @@
 		0B5068DC1460E46500BD27ED /* OSCDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCDispatcher.m; sourceTree = "<group>"; };
 		0B5068DD1460E46500BD27ED /* OSCPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCPacket.h; sourceTree = "<group>"; };
 		0B5068DE1460E46500BD27ED /* OSCPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCPacket.m; sourceTree = "<group>"; };
-		0B5068EB1460E4BC00BD27ED /* AsyncSocket Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "AsyncSocket Documentation.html"; sourceTree = "<group>"; };
-		0B5068EC1460E4BC00BD27ED /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
-		0B5068ED1460E4BC00BD27ED /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
-		0B5068EE1460E4BC00BD27ED /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
-		0B5068EF1460E4BC00BD27ED /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
-		0B5068FF1460E4BC00BD27ED /* changes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changes.txt; sourceTree = "<group>"; };
 		0B50691C1460E4BC00BD27ED /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
 		0B50691D1460E4BC00BD27ED /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		0B50691E1460E4BC00BD27ED /* RegexKitLite.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RegexKitLite.html; sourceTree = "<group>"; };
 		0B50691F1460E4BC00BD27ED /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		0BFFAACE15F42EC50051E00F /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = CocoaAsyncSocket/RunLoop/AsyncSocket.h; sourceTree = "<group>"; };
+		0BFFAACF15F42EC50051E00F /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = CocoaAsyncSocket/RunLoop/AsyncSocket.m; sourceTree = "<group>"; };
+		0BFFAAD015F42EC50051E00F /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncUdpSocket.h; path = CocoaAsyncSocket/RunLoop/AsyncUdpSocket.h; sourceTree = "<group>"; };
+		0BFFAAD115F42EC50051E00F /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncUdpSocket.m; path = CocoaAsyncSocket/RunLoop/AsyncUdpSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,23 +320,10 @@
 		0B5068E91460E4BC00BD27ED /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				0B5068EA1460E4BC00BD27ED /* cocoaasyncsocket */,
+				0BFFAACD15F42EB70051E00F /* CocoaAsyncSocket */,
 				0B5069111460E4BC00BD27ED /* RegexKitLite */,
 			);
 			path = lib;
-			sourceTree = "<group>";
-		};
-		0B5068EA1460E4BC00BD27ED /* cocoaasyncsocket */ = {
-			isa = PBXGroup;
-			children = (
-				0B5068EB1460E4BC00BD27ED /* AsyncSocket Documentation.html */,
-				0B5068EC1460E4BC00BD27ED /* AsyncSocket.h */,
-				0B5068ED1460E4BC00BD27ED /* AsyncSocket.m */,
-				0B5068EE1460E4BC00BD27ED /* AsyncUdpSocket.h */,
-				0B5068EF1460E4BC00BD27ED /* AsyncUdpSocket.m */,
-				0B5068FF1460E4BC00BD27ED /* changes.txt */,
-			);
-			path = cocoaasyncsocket;
 			sourceTree = "<group>";
 		};
 		0B5069111460E4BC00BD27ED /* RegexKitLite */ = {
@@ -350,6 +335,17 @@
 				0B50691F1460E4BC00BD27ED /* RegexKitLite.m */,
 			);
 			path = RegexKitLite;
+			sourceTree = "<group>";
+		};
+		0BFFAACD15F42EB70051E00F /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				0BFFAACE15F42EC50051E00F /* AsyncSocket.h */,
+				0BFFAACF15F42EC50051E00F /* AsyncSocket.m */,
+				0BFFAAD015F42EC50051E00F /* AsyncUdpSocket.h */,
+				0BFFAAD115F42EC50051E00F /* AsyncUdpSocket.m */,
+			);
+			name = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,9 +360,9 @@
 				0B4C47121460F4B8007B5E06 /* OSCConnectionDelegate.h in Headers */,
 				0B4C47131460F4B8007B5E06 /* OSCDispatcher.h in Headers */,
 				0B4C47151460F4B8007B5E06 /* OSCPacket.h in Headers */,
-				0B4C47171460F55E007B5E06 /* AsyncSocket.h in Headers */,
-				0B4C47191460F55E007B5E06 /* AsyncUdpSocket.h in Headers */,
 				0B4C471B1460F565007B5E06 /* RegexKitLite.h in Headers */,
+				0BFFAAD615F42EEE0051E00F /* AsyncSocket.h in Headers */,
+				0BFFAAD815F42EF40051E00F /* AsyncUdpSocket.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,9 +376,9 @@
 				0B5068E41460E46500BD27ED /* OSCConnectionDelegate.h in Headers */,
 				0B5068E51460E46500BD27ED /* OSCDispatcher.h in Headers */,
 				0B5068E71460E46500BD27ED /* OSCPacket.h in Headers */,
-				0B5069271460E4BC00BD27ED /* AsyncSocket.h in Headers */,
-				0B5069291460E4BC00BD27ED /* AsyncUdpSocket.h in Headers */,
 				0B50693E1460E4BC00BD27ED /* RegexKitLite.h in Headers */,
+				0BFFAAD215F42EC50051E00F /* AsyncSocket.h in Headers */,
+				0BFFAAD415F42EC50051E00F /* AsyncUdpSocket.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +463,7 @@
 		0B5068BC1460E41500BD27ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 0B5068BF1460E41500BD27ED /* Build configuration list for PBXProject "CocoaOSC" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -530,9 +526,9 @@
 				0B4C47111460F4B8007B5E06 /* OSCConnection.m in Sources */,
 				0B4C47141460F4B8007B5E06 /* OSCDispatcher.m in Sources */,
 				0B4C47161460F4B8007B5E06 /* OSCPacket.m in Sources */,
-				0B4C47181460F55E007B5E06 /* AsyncSocket.m in Sources */,
-				0B4C471A1460F55E007B5E06 /* AsyncUdpSocket.m in Sources */,
 				0B4C471C1460F565007B5E06 /* RegexKitLite.m in Sources */,
+				0BFFAAD715F42EF20051E00F /* AsyncSocket.m in Sources */,
+				0BFFAAD915F42EF70051E00F /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,9 +561,9 @@
 				0B5068E31460E46500BD27ED /* OSCConnection.m in Sources */,
 				0B5068E61460E46500BD27ED /* OSCDispatcher.m in Sources */,
 				0B5068E81460E46500BD27ED /* OSCPacket.m in Sources */,
-				0B5069281460E4BC00BD27ED /* AsyncSocket.m in Sources */,
-				0B50692A1460E4BC00BD27ED /* AsyncUdpSocket.m in Sources */,
 				0B50693F1460E4BC00BD27ED /* RegexKitLite.m in Sources */,
+				0BFFAAD315F42EC50051E00F /* AsyncSocket.m in Sources */,
+				0BFFAAD515F42EC50051E00F /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +638,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -650,7 +647,6 @@
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaOSC/CocoaOSC-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -669,6 +665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -678,7 +675,6 @@
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaOSC/CocoaOSC-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -721,12 +717,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo-mac/CocoaOSC_Mac_Demo_Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -743,13 +740,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo-mac/CocoaOSC_Mac_Demo_Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -775,7 +773,6 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -792,7 +789,6 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
