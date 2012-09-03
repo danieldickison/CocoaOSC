@@ -22,10 +22,10 @@ static OSCConnectionProtocol modelToOSCProtocol(NSInteger protocol);
 @synthesize methodsController, sentPacketsController;
 @synthesize methodsTable, sentPacketsTable;
 @synthesize packetInspector, packetViewController;
-@synthesize newPacketSheet, newPacketViewController;
+@synthesize createPacketSheet, createPacketViewController;
 @synthesize connected, listening;
 
-static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
+static void * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
 
 - (id)init
 {
@@ -58,7 +58,7 @@ static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
 {
     [super windowControllerDidLoadNib:aController];
     [self.packetInspector setContentView:[self.packetViewController view]];
-    [self.newPacketSheet setContentView:[self.newPacketViewController view]];
+    [self.createPacketSheet setContentView:[self.createPacketViewController view]];
     [self.methodsTable setDoubleAction:@selector(methodsDoubleClickAction:)];
     [self.sentPacketsTable setDoubleAction:@selector(packetsDoubleClickAction:)];
     
@@ -110,8 +110,8 @@ static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
     if (selected)
     {
         OSCPacket *newPacket = [[selected objectForKey:@"packet"] copy];
-        [self.newPacketViewController setRepresentedObject:newPacket];
-        [NSApp beginSheet:self.newPacketSheet modalForWindow:[self windowForSheet] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+        [self.createPacketViewController setRepresentedObject:newPacket];
+        [NSApp beginSheet:self.createPacketSheet modalForWindow:[self windowForSheet] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
     }
 }
 
@@ -211,8 +211,8 @@ static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
 - (IBAction)newPacket:(NSButton *)sender
 {
     OSCPacket *newPacket = [[OSCMutableMessage alloc] init];
-    [self.newPacketViewController setRepresentedObject:newPacket];
-    [NSApp beginSheet:self.newPacketSheet modalForWindow:[self windowForSheet] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+    [self.createPacketViewController setRepresentedObject:newPacket];
+    [NSApp beginSheet:self.createPacketSheet modalForWindow:[self windowForSheet] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
 }
 
 
@@ -230,8 +230,8 @@ static NSString * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
         // This case is for UDP servers that have received a remote packet after which the remote address is saved in the model object.
         [connection sendPacket:packet toHost:self.model.remoteHost port:self.model.remotePort];
     }
-    [NSApp endSheet:self.newPacketSheet];
-    [self.newPacketSheet orderOut:nil];
+    [NSApp endSheet:self.createPacketSheet];
+    [self.createPacketSheet orderOut:nil];
 }
 
 

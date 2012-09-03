@@ -27,6 +27,10 @@
     [encoder encodeObject:address forKey:@"address"];
 }
 
+- (OSCDispatcher *)dispatcher {
+    return dispatcher;
+}
+
 - (void)setDispatcher:(OSCDispatcher *)newDisp
 {
     [self.dispatcher removeAllTargetMethods:self action:NULL];
@@ -35,6 +39,10 @@
     {
         [self.dispatcher addMethodAddress:address target:self action:@selector(receivedPacket:)];
     }
+}
+
+- (NSString *)address {
+    return address;
 }
 
 - (void)setAddress:(NSString *)newAddr

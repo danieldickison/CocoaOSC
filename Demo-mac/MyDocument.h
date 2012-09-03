@@ -35,8 +35,8 @@
 @property IBOutlet NSPanel *packetInspector;
 @property IBOutlet PacketViewController *packetViewController;
 
-@property IBOutlet NSWindow *newPacketSheet;
-@property IBOutlet PacketViewController *newPacketViewController;
+@property IBOutlet NSWindow *createPacketSheet;
+@property IBOutlet PacketViewController *createPacketViewController;
 
 @property (getter=isConnected) BOOL connected;
 @property (getter=isListening) BOOL listening;
