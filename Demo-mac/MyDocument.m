@@ -254,6 +254,8 @@ static void * const KVO_CONTEXT = @"MyDocument_KVO_CONTEXT";
 - (void)oscConnectionDidDisconnect:(OSCConnection *)connection
 {
     self.connected = NO;
+    NSLog(@"Disconnected. Restarting server...");
+    [self startServer:nil];
 }
 
 //- (void)oscConnection:(OSCConnection *)connection willSendPacket:(OSCPacket *)packet;
