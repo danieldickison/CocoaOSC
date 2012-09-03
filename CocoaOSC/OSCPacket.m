@@ -513,7 +513,7 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<OSCMutableBundle (%d) @ %@>", [childPackets count], timetag];
+    return [NSString stringWithFormat:@"<OSCMutableBundle (%lu) @ %@>", [childPackets count], timetag];
 }
 
 @end
