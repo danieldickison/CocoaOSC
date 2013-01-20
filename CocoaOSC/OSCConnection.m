@@ -9,8 +9,8 @@
 #import "OSCConnection.h"
 #import "OSCPacket.h"
 #import "OSCDispatcher.h"
-#import "AsyncSocket.h"
-#import "AsyncUdpSocket.h"
+#import "GCDAsyncSocket.h"
+#import "GCDAsyncUdpSocket.h"
 
 
 #define MAX_PACKET_LENGTH 1048576
@@ -49,9 +49,6 @@ enum {
 - (void)dealloc
 {
     [self disconnect];
-    [dispatcher release];
-    [pendingPacketsByTag release];
-    [super dealloc];
 }
 
 
@@ -64,16 +61,13 @@ enum {
 {
     [tcpListenSocket setDelegate:nil];
     [tcpListenSocket disconnect];
-    [tcpListenSocket release];
     tcpListenSocket = nil;
     
     [tcpSocket setDelegate:nil];
     [tcpSocket disconnect];
-    [tcpSocket release];
     tcpSocket = nil;
      
     [udpSocket setDelegate:nil];
-    [udpSocket release];
     udpSocket = nil;
      
     [pendingPacketsByTag removeAllObjects];
@@ -87,7 +81,7 @@ enum {
 
 - (BOOL)isConnected
 {
-    return [self.socket isConnected];
+    return ([self.socket isConnected]);
 }
 
 
@@ -132,7 +126,7 @@ enum {
     if (protocol == OSCConnectionTCP_Int32Header ||
         protocol == OSCConnectionTCP_RFC1055)
     {
-        tcpSocket = [[AsyncSocket alloc] initWithDelegate:self];
+//        tcpSocket = [[GCDAsyncSocket alloc] initWithDelegate:self];
         if (![tcpSocket connectToHost:host onPort:port error:errPtr])
         {
             goto onError;
@@ -140,7 +134,7 @@ enum {
     }
     else
     {
-        udpSocket = [[AsyncUdpSocket alloc] initWithDelegate:self];
+//        udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self];
         if (![udpSocket connectToHost:host onPort:port error:errPtr])
         {
             goto onError;
@@ -169,7 +163,8 @@ onError:
              @"Can only accept connections on TCP sockets!");
     [self disconnectAndNotifyDelegate:self.connected];
     protocol = proto;
-    tcpListenSocket = [[AsyncSocket alloc] initWithDelegate:self];
+    tcpListenSocket = [[GCDAsyncSocket alloc] initWithDelegate:self
+                                                 delegateQueue:socketDelegateQueue];
     return [tcpListenSocket acceptOnInterface:interface port:port error:errPtr];
 }
 
@@ -178,10 +173,30 @@ onError:
 {
     [self disconnectAndNotifyDelegate:self.connected];
     protocol = OSCConnectionUDP;
-    udpSocket = [[AsyncUdpSocket alloc] initWithDelegate:self];
-    return [udpSocket bindToAddress:localAddr port:port error:errPtr];
+    
+    dispatch_queue_t delegateQueue = NULL;
+    if([delegate respondsToSelector:@selector(queue)]) {
+        delegateQueue = [delegate queue];
+    }
+    
+    if(delegateQueue == NULL) {
+        delegateQueue = dispatch_get_current_queue();
+    }
+    
+    udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self
+                                              delegateQueue:delegateQueue];
+    BOOL bound =  [udpSocket bindToPort:port interface:localAddr error:errPtr];
+    
+    if(!bound) {
+        return NO;
+    }
+    
+    if(continuouslyReceivePackets) {
+        return [udpSocket beginReceiving:errPtr];
+    }
+    
+    return bound;
 }
-
 
 - (void)sendPacket:(OSCPacket *)packet
 {
@@ -236,7 +251,9 @@ onError:
 {
     if (protocol == OSCConnectionUDP)
     {
-        [udpSocket receiveWithTimeout:-1 tag:0];
+        // TODO: Are we still doing receiveOnce?
+//        [udpSocket receiveWithTimeout:-1 tag:0];
+
     }
     else if (protocol == OSCConnectionTCP_Int32Header)
     {
@@ -274,7 +291,6 @@ onError:
     {
         [delegate oscConnection:self didReceivePacket:packet];
     }
-    [packet release];
 }
 
 
@@ -293,13 +309,13 @@ onError:
 
 #pragma mark TCP Delegate Methods
 
-- (void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket
+- (void)onSocket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket
 {
     [self disconnectAndNotifyDelegate:NO];
-    tcpSocket = [newSocket retain];
+    tcpSocket = newSocket;
 }
 
-- (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
+- (void)onSocket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
     if ([delegate respondsToSelector:@selector(oscConnectionDidConnect:)])
     {
@@ -308,13 +324,13 @@ onError:
 }
 
 
-- (void)onSocketDidDisconnect:(AsyncSocket *)sock
+- (void)onSocketDidDisconnect:(GCDAsyncSocket *)sock
 {
     [self disconnectAndNotifyDelegate:YES];
 }
 
 
-- (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+- (void)onSocket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
     if (tag == kPacketHeaderTag)
     {
@@ -345,7 +361,7 @@ onError:
 }
 
 
-- (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag
+- (void)onSocket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
 {
     if (tag != kPacketHeaderTag)
     {
@@ -356,19 +372,26 @@ onError:
 
 #pragma mark UDP Delegate Methods
 
-- (BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data
+      fromAddress:(NSData *)address
+withFilterContext:(id)filterContext
 {
+    NSString *host;
+    UInt16 port;
+    
+    [GCDAsyncUdpSocket getHost:&host port:&port fromAddress:address];
+    
     [self dispatchPacketData:data fromHost:host port:port];
-    if (self.continuouslyReceivePackets)
-    {
-        [self receivePacket];
-    }
-    return YES;
+//    if (self.continuouslyReceivePackets)
+//    {
+//        [self receivePacket];
+//    }
 }
 
-- (void)onUdpSocket:(AsyncUdpSocket *)sock didSendDataWithTag:(long)tag
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag
 {
-    [self notifyDelegateOfSentPacketWithTag:tag];
+    [self notifyDelegateOfSentPacketWithTag:tag];    
 }
+
 
 @end

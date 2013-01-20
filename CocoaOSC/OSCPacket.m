@@ -67,6 +67,7 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
 
 @implementation OSCPacket
 
+@dynamic address, arguments, timetag, childPackets, bundle;
 
 // Following accessors overridden by concrete subclasses.
 
@@ -106,25 +107,21 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
     {
         if ([data length] == 0)
         {
-            [self release];
             return nil;
         }
         unsigned char firstByte[1];
         [data getBytes:firstByte length:1];
         if (firstByte[0] == '/')
         {
-            [self release];
             self = [[OSCMutableMessage alloc] initWithData:data];
         }
         else if (firstByte[0] == '#')
         {
-            [self release];
             self = [[OSCMutableBundle alloc] initWithData:data];
         }
         else
         {
             NSLog(@"Unrecognized first byte for OSC message: %@", data);
-            [self release];
             return nil;
         }
     }
@@ -133,7 +130,6 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    [self release];
     self = nil;
     NSData *data = [aDecoder decodeObjectForKey:@"data"];
     if (data) {
@@ -238,12 +234,6 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
 @synthesize arguments;
 @synthesize address;
 
-- (void)dealloc
-{
-    [arguments release];
-    [address release];
-    [super dealloc];
-}
 
 - (id)init
 {
@@ -435,12 +425,6 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
 @synthesize childPackets;
 @synthesize timetag;
 
-- (void)dealloc
-{
-    [childPackets release];
-    [timetag release];
-    [super dealloc];
-}
 
 - (id)init
 {
@@ -467,7 +451,6 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
             if (![bundleMarker isEqualToString:@"#bundle"])
             {
                 NSLog(@"Malformed bundle marker: %@", bundleMarker);
-                [self release];
                 return nil;
             }
             
@@ -481,7 +464,6 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
                 NSData *subData = [data subdataWithRange:NSMakeRange(index, size)];
                 OSCPacket *childPacket = [[OSCPacket alloc] initWithData:subData];
                 [self addChildPacket:childPacket];
-                [childPacket release];
                 index += size;
             }
         }
@@ -535,7 +517,7 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
             if (buffer[bufferSize-1] == '\0')
             {
                 NSUInteger strLength = strlen(buffer);
-                returnValue = [[[NSString alloc] initWithBytesNoCopy:buffer length:strLength encoding:NSASCIIStringEncoding freeWhenDone:YES] autorelease];
+                returnValue = [[NSString alloc] initWithBytesNoCopy:buffer length:strLength encoding:NSASCIIStringEncoding freeWhenDone:YES];
                 *ioIndex += strLength+1;
             }
             else

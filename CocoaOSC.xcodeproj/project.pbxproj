@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		039D2DC916A9FE9000BDF0CE /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 039D2DC516A9FE9000BDF0CE /* GCDAsyncSocket.h */; };
+		039D2DCA16A9FE9000BDF0CE /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 039D2DC616A9FE9000BDF0CE /* GCDAsyncSocket.m */; };
+		039D2DCB16A9FE9000BDF0CE /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 039D2DC716A9FE9000BDF0CE /* GCDAsyncUdpSocket.h */; };
+		039D2DCC16A9FE9000BDF0CE /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 039D2DC816A9FE9000BDF0CE /* GCDAsyncUdpSocket.m */; };
 		0B4C46861460E8B9007B5E06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C46851460E8B9007B5E06 /* Cocoa.framework */; };
 		0B4C46901460E8B9007B5E06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C468E1460E8B9007B5E06 /* InfoPlist.strings */; };
 		0B4C46C81460EAAF007B5E06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C46C71460EAAF007B5E06 /* UIKit.framework */; };
@@ -55,15 +59,7 @@
 		0B5068E71460E46500BD27ED /* OSCPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068DD1460E46500BD27ED /* OSCPacket.h */; };
 		0B5068E81460E46500BD27ED /* OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5068DE1460E46500BD27ED /* OSCPacket.m */; };
 		0B50693E1460E4BC00BD27ED /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B50691D1460E4BC00BD27ED /* RegexKitLite.h */; };
-		0B50693F1460E4BC00BD27ED /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B50691F1460E4BC00BD27ED /* RegexKitLite.m */; };
-		0BFFAAD215F42EC50051E00F /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFFAACE15F42EC50051E00F /* AsyncSocket.h */; };
-		0BFFAAD315F42EC50051E00F /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFAACF15F42EC50051E00F /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		0BFFAAD415F42EC50051E00F /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFFAAD015F42EC50051E00F /* AsyncUdpSocket.h */; };
-		0BFFAAD515F42EC50051E00F /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFAAD115F42EC50051E00F /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		0BFFAAD615F42EEE0051E00F /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFFAACE15F42EC50051E00F /* AsyncSocket.h */; };
-		0BFFAAD715F42EF20051E00F /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFAACF15F42EC50051E00F /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		0BFFAAD815F42EF40051E00F /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFFAAD015F42EC50051E00F /* AsyncUdpSocket.h */; };
-		0BFFAAD915F42EF70051E00F /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFAAD115F42EC50051E00F /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		0B50693F1460E4BC00BD27ED /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B50691F1460E4BC00BD27ED /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +93,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		039D2DC516A9FE9000BDF0CE /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = CocoaAsyncSocket/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		039D2DC616A9FE9000BDF0CE /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = CocoaAsyncSocket/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
+		039D2DC716A9FE9000BDF0CE /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = CocoaAsyncSocket/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		039D2DC816A9FE9000BDF0CE /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = CocoaAsyncSocket/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		0B4C46841460E8B9007B5E06 /* CocoaOSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaOSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4C46851460E8B9007B5E06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		0B4C46881460E8B9007B5E06 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -149,10 +149,6 @@
 		0B50691D1460E4BC00BD27ED /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		0B50691E1460E4BC00BD27ED /* RegexKitLite.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RegexKitLite.html; sourceTree = "<group>"; };
 		0B50691F1460E4BC00BD27ED /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		0BFFAACE15F42EC50051E00F /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = CocoaAsyncSocket/RunLoop/AsyncSocket.h; sourceTree = "<group>"; };
-		0BFFAACF15F42EC50051E00F /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = CocoaAsyncSocket/RunLoop/AsyncSocket.m; sourceTree = "<group>"; };
-		0BFFAAD015F42EC50051E00F /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncUdpSocket.h; path = CocoaAsyncSocket/RunLoop/AsyncUdpSocket.h; sourceTree = "<group>"; };
-		0BFFAAD115F42EC50051E00F /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncUdpSocket.m; path = CocoaAsyncSocket/RunLoop/AsyncUdpSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,10 +336,10 @@
 		0BFFAACD15F42EB70051E00F /* CocoaAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				0BFFAACE15F42EC50051E00F /* AsyncSocket.h */,
-				0BFFAACF15F42EC50051E00F /* AsyncSocket.m */,
-				0BFFAAD015F42EC50051E00F /* AsyncUdpSocket.h */,
-				0BFFAAD115F42EC50051E00F /* AsyncUdpSocket.m */,
+				039D2DC516A9FE9000BDF0CE /* GCDAsyncSocket.h */,
+				039D2DC616A9FE9000BDF0CE /* GCDAsyncSocket.m */,
+				039D2DC716A9FE9000BDF0CE /* GCDAsyncUdpSocket.h */,
+				039D2DC816A9FE9000BDF0CE /* GCDAsyncUdpSocket.m */,
 			);
 			name = CocoaAsyncSocket;
 			sourceTree = "<group>";
@@ -361,8 +357,6 @@
 				0B4C47131460F4B8007B5E06 /* OSCDispatcher.h in Headers */,
 				0B4C47151460F4B8007B5E06 /* OSCPacket.h in Headers */,
 				0B4C471B1460F565007B5E06 /* RegexKitLite.h in Headers */,
-				0BFFAAD615F42EEE0051E00F /* AsyncSocket.h in Headers */,
-				0BFFAAD815F42EF40051E00F /* AsyncUdpSocket.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,8 +371,8 @@
 				0B5068E51460E46500BD27ED /* OSCDispatcher.h in Headers */,
 				0B5068E71460E46500BD27ED /* OSCPacket.h in Headers */,
 				0B50693E1460E4BC00BD27ED /* RegexKitLite.h in Headers */,
-				0BFFAAD215F42EC50051E00F /* AsyncSocket.h in Headers */,
-				0BFFAAD415F42EC50051E00F /* AsyncUdpSocket.h in Headers */,
+				039D2DC916A9FE9000BDF0CE /* GCDAsyncSocket.h in Headers */,
+				039D2DCB16A9FE9000BDF0CE /* GCDAsyncUdpSocket.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,8 +521,6 @@
 				0B4C47141460F4B8007B5E06 /* OSCDispatcher.m in Sources */,
 				0B4C47161460F4B8007B5E06 /* OSCPacket.m in Sources */,
 				0B4C471C1460F565007B5E06 /* RegexKitLite.m in Sources */,
-				0BFFAAD715F42EF20051E00F /* AsyncSocket.m in Sources */,
-				0BFFAAD915F42EF70051E00F /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,8 +554,8 @@
 				0B5068E61460E46500BD27ED /* OSCDispatcher.m in Sources */,
 				0B5068E81460E46500BD27ED /* OSCPacket.m in Sources */,
 				0B50693F1460E4BC00BD27ED /* RegexKitLite.m in Sources */,
-				0BFFAAD315F42EC50051E00F /* AsyncSocket.m in Sources */,
-				0BFFAAD515F42EC50051E00F /* AsyncUdpSocket.m in Sources */,
+				039D2DCA16A9FE9000BDF0CE /* GCDAsyncSocket.m in Sources */,
+				039D2DCC16A9FE9000BDF0CE /* GCDAsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +756,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -787,6 +780,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;

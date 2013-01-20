@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "OSCConnectionDelegate.h"
 
+#import "GCDAsyncSocket.h"
+#import "GCDAsyncUdpSocket.h"
 
-@class AsyncSocket;
-@class AsyncUdpSocket;
 @class OSCPacket;
 @class OSCDispatcher;
 
@@ -24,14 +24,16 @@ typedef enum {
 
 
 
-@interface OSCConnection : NSObject
+@interface OSCConnection : NSObject <GCDAsyncSocketDelegate, GCDAsyncUdpSocketDelegate>
 {
-    id<OSCConnectionDelegate> delegate;
+    __unsafe_unretained id<OSCConnectionDelegate> delegate;
     OSCDispatcher *dispatcher;
     
-    AsyncSocket *tcpListenSocket;
-    AsyncSocket *tcpSocket;
-    AsyncUdpSocket *udpSocket;
+    GCDAsyncSocket *tcpListenSocket;
+    GCDAsyncSocket *tcpSocket;
+    GCDAsyncUdpSocket *udpSocket;
+    
+    dispatch_queue_t socketDelegateQueue;
     
     OSCConnectionProtocol protocol;
     

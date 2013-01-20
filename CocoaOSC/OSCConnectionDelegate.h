@@ -26,4 +26,5 @@
 - (void)oscConnection:(OSCConnection *)connection didReceivePacket:(OSCPacket *)packet fromHost:(NSString *)host port:(UInt16)port;
 - (void)oscConnection:(OSCConnection *)connection failedToReceivePacketWithError:(NSError *)error;
 
+- (dispatch_queue_t)queue;
 @end
