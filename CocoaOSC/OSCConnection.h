@@ -53,6 +53,11 @@ typedef enum {
 @property (nonatomic, readonly) UInt16 localPort;
 @property (nonatomic, readonly) OSCConnectionProtocol protocol;
 
+/**
+ @param dispatcher can be nil
+ */
+- (id)initWithDispatcher:(OSCDispatcher *)dispatcher;
+
 // Connect and either accept or bind are mutually exclusive.  Don't call one after calling the other.
 - (BOOL)connectToHost:(NSString *)host port:(UInt16)port protocol:(OSCConnectionProtocol)protocol error:(NSError **)errPtr;
 - (void)disconnect;

@@ -38,9 +38,14 @@ enum {
 
 - (id)init
 {
+    return  [self initWithDispatcher:[[OSCDispatcher alloc] init]];
+}
+
+- (id)initWithDispatcher:(OSCDispatcher *)_dispatcher
+{
     if (self = [super init])
     {
-        dispatcher = [[OSCDispatcher alloc] init];
+        dispatcher = _dispatcher;
         pendingPacketsByTag = [[NSMutableDictionary alloc] init];
     }
     return self;
