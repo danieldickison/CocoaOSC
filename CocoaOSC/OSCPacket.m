@@ -606,6 +606,16 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
     return (OSCValueType) self.typetag[index + 1]; // comma is first char
 }
 
+#pragma mark -
+
+- (BOOL)isEqual:(id)object
+{
+    if([object isKindOfClass:[OSCMessage class]]) {
+        return [packetData isEqualToData:((OSCMessage *)object)->packetData];
+    }
+
+    return [super isEqual:object];
+}
 
 @end
 
