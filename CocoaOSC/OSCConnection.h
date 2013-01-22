@@ -33,8 +33,6 @@ typedef enum {
     GCDAsyncSocket *tcpSocket;
     GCDAsyncUdpSocket *udpSocket;
     
-    dispatch_queue_t socketDelegateQueue;
-    
     OSCConnectionProtocol protocol;
     
     NSMutableDictionary *pendingPacketsByTag;

@@ -28,6 +28,7 @@ enum {
 - (void)notifyDelegateOfSentPacketWithTag:(long)tag;
 - (void)disconnectAndNotifyDelegate:(BOOL)notify;
 @property (nonatomic, readonly) id socket; // TCP or UDP socket or nil.
+@property (readonly) dispatch_queue_t delegateQueue; // Queue on which to call delegate methods
 
 @end
 
@@ -35,6 +36,7 @@ enum {
 @implementation OSCConnection
 
 @synthesize protocol, delegate, dispatcher, continuouslyReceivePackets;
+@dynamic delegateQueue;
 
 - (id)init
 {
@@ -95,6 +97,14 @@ enum {
     return (tcpSocket ? (id)tcpSocket : (id)udpSocket);
 }
 
+- (dispatch_queue_t)delegateQueue
+{
+    if([delegate respondsToSelector:@selector(queue)]) {
+        return [delegate queue] ?: dispatch_get_main_queue();
+    }
+
+    return dispatch_get_main_queue();
+}
 
 - (NSString *)connectedHost
 {
@@ -169,7 +179,7 @@ onError:
     [self disconnectAndNotifyDelegate:self.connected];
     protocol = proto;
     tcpListenSocket = [[GCDAsyncSocket alloc] initWithDelegate:self
-                                                 delegateQueue:socketDelegateQueue];
+                                                 delegateQueue:self.delegateQueue];
     return [tcpListenSocket acceptOnInterface:interface port:port error:errPtr];
 }
 
@@ -178,18 +188,9 @@ onError:
 {
     [self disconnectAndNotifyDelegate:self.connected];
     protocol = OSCConnectionUDP;
-    
-    dispatch_queue_t delegateQueue = NULL;
-    if([delegate respondsToSelector:@selector(queue)]) {
-        delegateQueue = [delegate queue];
-    }
-    
-    if(delegateQueue == NULL) {
-        delegateQueue = dispatch_get_current_queue();
-    }
-    
+
     udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self
-                                              delegateQueue:delegateQueue];
+                                              delegateQueue:self.delegateQueue];
     BOOL bound =  [udpSocket bindToPort:port interface:localAddr error:errPtr];
     
     if(!bound) {
