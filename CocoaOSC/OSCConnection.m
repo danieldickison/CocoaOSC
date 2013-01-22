@@ -49,6 +49,8 @@ enum {
     {
         dispatcher = _dispatcher;
         pendingPacketsByTag = [[NSMutableDictionary alloc] init];
+        pendingPacketsQueue = dispatch_queue_create("com.github.cocoaosc.pending-packets",
+                                                    DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
@@ -76,8 +78,11 @@ enum {
      
     [udpSocket setDelegate:nil];
     udpSocket = nil;
-     
-    [pendingPacketsByTag removeAllObjects];
+
+    dispatch_async(pendingPacketsQueue, ^{
+        [pendingPacketsByTag removeAllObjects];
+    });
+
     if (notify &&
         [delegate respondsToSelector:@selector(oscConnectionDidDisconnect:)])
     {
@@ -219,7 +224,10 @@ onError:
     }
     
     lastSendTag++;
-    [pendingPacketsByTag setObject:packet forKey:[NSNumber numberWithLong:lastSendTag]];
+
+    dispatch_async(pendingPacketsQueue, ^{
+        [pendingPacketsByTag setObject:packet forKey:[NSNumber numberWithLong:lastSendTag]];
+    });
     
     NSData *packetData = [packet encode];
     if (protocol == OSCConnectionUDP)
@@ -248,8 +256,11 @@ onError:
              ![udpSocket isConnected],
              @"-[OSCConnection sendPacket:toHost:port] can only be called on a UDP connection that has been binded.");
     lastSendTag++;
-    [pendingPacketsByTag setObject:packet forKey:[NSNumber numberWithLong:lastSendTag]];
-    [udpSocket sendData:[packet encode] toHost:host port:port withTimeout:-1 tag:lastSendTag];
+    
+    dispatch_async(pendingPacketsQueue, ^{
+        [pendingPacketsByTag setObject:packet forKey:[NSNumber numberWithLong:lastSendTag]];
+        [udpSocket sendData:[packet encode] toHost:host port:port withTimeout:-1 tag:lastSendTag];
+    });
 }
 
 
@@ -302,13 +313,19 @@ onError:
 
 - (void)notifyDelegateOfSentPacketWithTag:(long)tag
 {
-    NSNumber *key = [NSNumber numberWithLong:tag];
-    if ([delegate respondsToSelector:@selector(oscConnection:didSendPacket:)])
-    {
-        OSCPacket *packet = [pendingPacketsByTag objectForKey:key];
-        [delegate oscConnection:self didSendPacket:packet];
-    }
-    [pendingPacketsByTag removeObjectForKey:key];
+    dispatch_async(pendingPacketsQueue, ^{
+        NSNumber *key = [NSNumber numberWithLong:tag];
+        if ([delegate respondsToSelector:@selector(oscConnection:didSendPacket:)])
+        {
+            OSCPacket *packet = [pendingPacketsByTag objectForKey:key];
+
+            dispatch_async([self.delegate queue], ^{
+                [delegate oscConnection:self didSendPacket:packet];
+            });
+        }
+
+        [pendingPacketsByTag removeObjectForKey:key];
+    });
 }
 
 

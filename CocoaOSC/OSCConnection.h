@@ -32,6 +32,9 @@ typedef enum {
     GCDAsyncSocket *tcpListenSocket;
     GCDAsyncSocket *tcpSocket;
     GCDAsyncUdpSocket *udpSocket;
+
+    /// Used to serialize accesses to pendingPacketsByTag
+    dispatch_queue_t pendingPacketsQueue;
     
     OSCConnectionProtocol protocol;
     
