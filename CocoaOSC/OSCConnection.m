@@ -79,7 +79,7 @@ enum {
     [udpSocket setDelegate:nil];
     udpSocket = nil;
 
-    dispatch_async(pendingPacketsQueue, ^{
+    dispatch_sync(pendingPacketsQueue, ^{
         [pendingPacketsByTag removeAllObjects];
     });
 
