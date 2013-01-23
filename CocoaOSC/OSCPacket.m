@@ -535,7 +535,36 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
                 [args addObject:[NSNumber numberWithFloat:
                                  *((float *)[self pointerToArgumentAtIndex:i])]];
                 break;
+
+            case OSCValueTypeInteger:
+                [args addObject:[NSNumber numberWithInt:
+                                 *((int32_t *)[self pointerToArgumentAtIndex:i])]];
+                break;
+
+            case OSCValueTypeLong:
+                [args addObject:[NSNumber numberWithLong:
+                                 *((int64_t *)[self pointerToArgumentAtIndex:i])]];
+                break;
+
+            case OSCValueTypeString: {
+                char *str = [self pointerToArgumentAtIndex:i];
+                int len = strnlen(str, [self lengthOfArgumentAtIndex:i]);
                 
+                [args addObject:[[NSString alloc] initWithBytes:str length:len
+                                                       encoding:NSASCIIStringEncoding]];
+            }
+                break;
+
+            case OSCValueTypeBlob:
+                [args addObject:[NSData dataWithBytesNoCopy:[self pointerToArgumentAtIndex:i]
+                                                     length:[self lengthOfArgumentAtIndex:i]]];
+                break;
+
+            case OSCValueTypeTimetag:
+                [args addObject:[NSDate dateWithNTPTimestamp:
+                                 *((int64_t *)[self pointerToArgumentAtIndex:i])]];
+                break;
+
             case OSCValueTypeNone:
             default:
                 [args addObject:[NSNull null]];
