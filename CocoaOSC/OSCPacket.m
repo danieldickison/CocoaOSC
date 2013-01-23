@@ -585,11 +585,12 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
             return 8;
 
         case OSCValueTypeBlob:
+            // FIXME: size is not swapped for little-endian processors
             return padLength(*((UInt32 *)[self pointerToArgumentAtIndex:index])) + 4;
 
         case OSCValueTypeString:
             // TODO: Use strnlen for safety
-            return strlen([self pointerToArgumentAtIndex:index]);
+            return padLength(strlen([self pointerToArgumentAtIndex:index]) + 1);
 
         case OSCValueTypeNone:
         default:
