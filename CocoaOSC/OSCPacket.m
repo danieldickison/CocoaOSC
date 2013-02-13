@@ -499,7 +499,7 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
 /// Padded address length
 - (size_t)addressLength
 {
-    return padLength(strnlen([self _address], packetData.length));
+    return padLength(strnlen([self _address], packetData.length) + 1);
 }
 
 - (NSString *)address
