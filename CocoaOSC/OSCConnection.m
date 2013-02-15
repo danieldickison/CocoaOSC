@@ -146,7 +146,7 @@ enum {
     if (protocol == OSCConnectionTCP_Int32Header ||
         protocol == OSCConnectionTCP_RFC1055)
     {
-//        tcpSocket = [[GCDAsyncSocket alloc] initWithDelegate:self];
+        tcpSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:self.delegateQueue];
         if (![tcpSocket connectToHost:host onPort:port error:errPtr])
         {
             goto onError;
@@ -154,7 +154,7 @@ enum {
     }
     else
     {
-//        udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self];
+        udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:self.delegateQueue];
         if (![udpSocket connectToHost:host onPort:port error:errPtr])
         {
             goto onError;
