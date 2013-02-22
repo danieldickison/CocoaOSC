@@ -319,7 +319,7 @@ onError:
         {
             OSCPacket *packet = [pendingPacketsByTag objectForKey:key];
 
-            dispatch_async([self.delegate queue], ^{
+            dispatch_async(self.delegateQueue, ^{
                 [delegate oscConnection:self didSendPacket:packet];
             });
         }
