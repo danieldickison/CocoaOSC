@@ -691,6 +691,10 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
             while (index < length)
             {
                 NSUInteger size = [parseOSCObject('i', bytes, &index, length) unsignedIntegerValue];
+                if(index + size > length) {
+                    NSLog(@"Invalid packet size '%ld' in %@", (unsigned long)size, self);
+                    return self;
+                }
                 NSData *subData = [data subdataWithRange:NSMakeRange(index, size)];
                 OSCPacket *childPacket = [[OSCPacket alloc] initWithData:subData];
                 [self addChildPacket:childPacket];
