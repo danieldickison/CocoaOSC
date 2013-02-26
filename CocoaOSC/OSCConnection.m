@@ -155,6 +155,7 @@ enum {
     else
     {
         udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:self.delegateQueue];
+        udpSocket.maxReceiveIPv4BufferSize = 65535; // Max UDP datagram size
         if (![udpSocket connectToHost:host onPort:port error:errPtr])
         {
             goto onError;
@@ -196,6 +197,7 @@ onError:
 
     udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self
                                               delegateQueue:self.delegateQueue];
+    udpSocket.maxReceiveIPv4BufferSize = 65535; // Max UDP datagram size
     BOOL bound =  [udpSocket bindToPort:port interface:localAddr error:errPtr];
     
     if(!bound) {
