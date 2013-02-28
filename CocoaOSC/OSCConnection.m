@@ -77,6 +77,7 @@ enum {
     tcpSocket = nil;
      
     [udpSocket setDelegate:nil];
+    [udpSocket close];
     udpSocket = nil;
 
     dispatch_sync(pendingPacketsQueue, ^{
