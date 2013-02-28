@@ -290,6 +290,12 @@ onError:
 
 - (void)dispatchPacketData:(NSData *)data fromHost:(NSString *)host port:(UInt16)port
 {
+    if([delegate respondsToSelector:@selector(oscConnection:shouldReceivePacketWithData:fromHost:port:)]) {
+        if([delegate oscConnection:self shouldReceivePacketWithData:data fromHost:host port:port] == NO) {
+            return;
+        }
+    }
+
     OSCPacket *packet = [[OSCPacket alloc] initWithData:data];
     if (!packet)
     {
