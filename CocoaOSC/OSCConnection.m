@@ -254,10 +254,11 @@ onError:
 
 - (void)sendPacket:(OSCPacket *)packet toHost:(NSString *)host port:(UInt16)port
 {
-    NSAssert(protocol == OSCConnectionUDP &&
-             udpSocket &&
-             ![udpSocket isConnected],
-             @"-[OSCConnection sendPacket:toHost:port] can only be called on a UDP connection that has been binded.");
+    if(!(protocol == OSCConnectionUDP && udpSocket && ![udpSocket isConnected])) {
+        NSLog(@"-[OSCConnection sendPacket:toHost:port] can only be called on a UDP connection that has been binded.");
+        return;
+    }
+
     lastSendTag++;
     
     dispatch_async(pendingPacketsQueue, ^{
