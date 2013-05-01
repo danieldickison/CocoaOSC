@@ -461,6 +461,7 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
             }
                 break;
 
+            case OSCValueTypeBlob:
             case OSCValueTypeInteger: {
                 int32_t hostInt = CFSwapInt32BigToHost(*((int32_t *)argumentBytes));
                 *((int32_t *)argumentBytes) = hostInt;
@@ -614,7 +615,6 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
             return 8;
 
         case OSCValueTypeBlob:
-            // FIXME: size is not swapped for little-endian processors
             return padLength(*((UInt32 *)[self pointerToArgumentAtIndex:index])) + 4;
 
         case OSCValueTypeString:
