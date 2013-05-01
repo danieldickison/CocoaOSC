@@ -558,7 +558,8 @@ static id parseOSCObject(char typetag, const void *bytes, NSUInteger *ioIndex, N
 
             case OSCValueTypeBlob:
                 [args addObject:[NSData dataWithBytesNoCopy:[self pointerToArgumentAtIndex:i]
-                                                     length:[self lengthOfArgumentAtIndex:i]]];
+                                                     length:[self lengthOfArgumentAtIndex:i]
+                                               freeWhenDone:NO]];
                 break;
 
             case OSCValueTypeTimetag:
