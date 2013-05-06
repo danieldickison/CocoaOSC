@@ -463,7 +463,7 @@
 		0B5068BC1460E41500BD27ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 0B5068BF1460E41500BD27ED /* Build configuration list for PBXProject "CocoaOSC" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -807,6 +807,7 @@
 				DSTROOT = /tmp/CocoaOSC.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaOSC/CocoaOSC-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CocoaOSC;
 				SKIP_INSTALL = YES;
@@ -816,13 +817,10 @@
 		0B5068D41460E41500BD27ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
 				DSTROOT = /tmp/CocoaOSC.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaOSC/CocoaOSC-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CocoaOSC;
 				SKIP_INSTALL = YES;
