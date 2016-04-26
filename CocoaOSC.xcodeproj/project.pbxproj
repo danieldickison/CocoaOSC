@@ -42,7 +42,7 @@
 		0B4C47231460FBA3007B5E06 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C471F1460FB6F007B5E06 /* libicucore.dylib */; };
 		0B4C47241460FBA8007B5E06 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C47211460FB76007B5E06 /* CFNetwork.framework */; };
 		0B4C47FB146104F8007B5E06 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C47FA146104F8007B5E06 /* libicucore.dylib */; };
-		0B4C47FD146105B6007B5E06 /* CocoaOSC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0B4C46841460E8B9007B5E06 /* CocoaOSC.framework */; };
+		0B4C47FD146105B6007B5E06 /* CocoaOSC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0B4C46841460E8B9007B5E06 /* CocoaOSC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0B5068C91460E41500BD27ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5068C81460E41500BD27ED /* Foundation.framework */; };
 		0B5068DF1460E46500BD27ED /* CocoaOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068D51460E46500BD27ED /* CocoaOSC.h */; };
 		0B5068E01460E46500BD27ED /* NS+OSCAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5068D61460E46500BD27ED /* NS+OSCAdditions.h */; };
@@ -463,7 +463,7 @@
 		0B5068BC1460E41500BD27ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = 0B5068BF1460E41500BD27ED /* Build configuration list for PBXProject "CocoaOSC" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -653,6 +653,7 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.danieldickison.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CocoaOSC;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -679,6 +680,7 @@
 				INFOPLIST_FILE = "CocoaOSC/CocoaOSC-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.danieldickison.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CocoaOSC;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -694,6 +696,7 @@
 				INFOPLIST_FILE = "Demo-ios/CocoaOSCDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.danieldickison.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = CocoaOSCios;
 				WRAPPER_EXTENSION = app;
 			};
@@ -708,6 +711,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.danieldickison.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = CocoaOSCios;
 				WRAPPER_EXTENSION = app;
 			};
@@ -729,6 +733,7 @@
 				INFOPLIST_FILE = "Demo-mac/CocoaOSC_Mac_Demo-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CocoaOSCmac;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -751,6 +756,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "Demo-mac/CocoaOSC_Mac_Demo-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = CocoaOSCmac;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -762,6 +768,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
